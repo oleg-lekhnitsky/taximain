@@ -21,7 +21,10 @@ export async function bootstrapDeployment(strapi: Core.Strapi) {
     }
   }
   const transferKey = process.env.MIGRATION_TRANSFER_TOKEN;
-  if (transferKey && !await strapi.db.query("admin::transfer-token").findOne({ where: { name: "Initial Railway migration" } })) {
-    await strapi.service("admin::transfer").token.create({ name: "Initial Railway migration", accessKey: transferKey, permissions: ["push"], lifespan: 24 * 60 * 60 * 1000 });
+  const migrationToken = await strapi.db.query("admin::transfer-token").findOne({ where: { name: "Initial Railway migration" } });
+  if (transferKey && !migrationToken) {
+    await strapi.service("admin::transfer").token.create({ name: "Initial Railway migration", accessKey: transferKey, permissions: ["push"], lifespan: 7 * 24 * 60 * 60 * 1000 });
+  } else if (!transferKey && migrationToken) {
+    await strapi.service("admin::transfer").token.revoke(migrationToken.id);
   }
 }
