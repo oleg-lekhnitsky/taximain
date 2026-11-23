@@ -1,7 +1,7 @@
 # Railway deployment
 
 `railway.ts` defines the `taximain` project: a Next.js `web` service, a Strapi `cms`
-service, PostgreSQL, and a persistent upload volume mounted at `/app/public/uploads`.
+service, PostgreSQL, and a persistent upload volume mounted at `/app/public` (with uploads beneath it, allowing Strapi to rename the upload directory during transfers).
 Both app services deploy the `main` branch of `oleg-lekhnitsky/taximain`.
 The CMS uses `/cms` as its repository root; the website uses the repository root.
 

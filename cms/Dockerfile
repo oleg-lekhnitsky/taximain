@@ -14,4 +14,4 @@ ENV NODE_ENV=production STRAPI_TELEMETRY_DISABLED=true HOST=0.0.0.0 PORT=1337
 COPY --from=build /app ./
 RUN mkdir -p public/uploads
 EXPOSE 1337
-CMD ["npm", "start"]
+CMD ["sh", "./docker-entrypoint.sh"]
