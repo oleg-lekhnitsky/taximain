@@ -1,3 +1,4 @@
+import { publicSiteOrigin } from "@/lib/site-origin";
 import QRCode from "qrcode";
 
 export function GET(request: Request) {
@@ -6,7 +7,7 @@ export function GET(request: Request) {
       ? "#f6f6f9"
       : "#ffffff";
   const source = new URL(request.url);
-  const target = new URL("/download", request.url);
+  const target = new URL("/download", publicSiteOrigin(request.url));
   for (const key of ["country", "lang"]) {
     const value = source.searchParams.get(key);
     if (value && /^[a-z]{2}$/.test(value)) target.searchParams.set(key, value);

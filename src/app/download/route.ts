@@ -1,3 +1,4 @@
+import { publicSiteOrigin } from "@/lib/site-origin";
 import { loadSiteContent } from "@/lib/cms/load";
 import { isCountryCode, defaultCountry, countryForHostname } from "@/lib/countries";
 import { defaultLanguage, isCountryLanguage } from "@/lib/languages";
@@ -17,7 +18,7 @@ export async function GET(request: Request) {
   return new Response(null, {
     status: 307,
     headers: {
-      Location: destination ?? new URL(`/?country=${country}&lang=${language}#download`, request.url).href,
+      Location: destination ?? new URL(`/?country=${country}&lang=${language}#download`, publicSiteOrigin(request.url)).href,
       "Cache-Control": "private, no-store",
       Vary: "User-Agent",
     },

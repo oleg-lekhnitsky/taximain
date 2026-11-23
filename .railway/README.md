@@ -20,5 +20,6 @@ not reseed or overwrite content.
 
 Optional deployment bootstrap variables provision a read-only frontend token and
 preserve the initial local CMS administrator's password hash. Existing accounts
-are never replaced. The temporary migration transfer token uses Strapi’s shortest supported expiry (seven days);
-remove `MIGRATION_TRANSFER_TOKEN` after importing the initial content. On the next startup, the token is revoked automatically.
+are never replaced. The temporary migration token is disabled after the initial content transfer. The
+production bootstrap revokes it when `MIGRATION_TRANSFER_TOKEN` is absent. Enable
+that variable only for an explicitly planned future import, then remove it again.

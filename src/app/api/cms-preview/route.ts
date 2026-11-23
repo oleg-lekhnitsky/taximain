@@ -1,3 +1,4 @@
+import { publicSiteOrigin } from "@/lib/site-origin";
 import { cookies, draftMode } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 import { verifyPreviewToken } from "@/lib/cms/preview-token";
@@ -16,7 +17,8 @@ export async function GET(request: NextRequest) {
     );
   (await draftMode()).enable();
   const jar = await cookies();
-  const secure = request.nextUrl.protocol === "https:";
+  const origin = publicSiteOrigin(request.url);
+  const secure = new URL(origin).protocol === "https:";
   // Keep draft cookies scoped to the CMS's embedded preview on HTTPS hosts.
   const bypass = jar.get("__prerender_bypass");
   if (secure && bypass) jar.set("__prerender_bypass", bypass.value, { httpOnly: true, secure: true, sameSite: "none", partitioned: true, path: "/" });
@@ -29,7 +31,7 @@ export async function GET(request: NextRequest) {
     expires: new Date(preview.expiresAt),
   });
   const response = NextResponse.redirect(
-    new URL(preview.pathname, request.nextUrl.origin),
+    new URL(preview.pathname, origin),
   );
   response.headers.set("Cache-Control", "private, no-store");
   response.headers.set("Referrer-Policy", "no-referrer");
