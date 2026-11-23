@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_page_header_sections",
+  "info": {
+    "displayName": "Header and navigation",
+    "description": "Content for the Header and navigation block on the website."
+  },
+  "attributes": {
+    "countryLabel": {
+      "type": "text",
+      "required": true
+    },
+    "languageLabel": {
+      "type": "text",
+      "required": true
+    },
+    "countryAndLanguageLabel": {
+      "type": "text",
+      "required": true
+    },
+    "faqLabel": {
+      "type": "text",
+      "required": true
+    },
+    "partnersLabel": {
+      "type": "text",
+      "required": true
+    },
+    "openMenuLabel": {
+      "type": "text",
+      "required": true
+    },
+    "closeMenuLabel": {
+      "type": "text",
+      "required": true
+    },
+    "navigationLabel": {
+      "type": "text",
+      "required": true
+    },
+    "versionLabel": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,204 @@
+:root {
+  --site-max-width: 1440px;
+  --site-header-height: 68px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --site-header-height: 88px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --site-header-height: 64px;
+  }
+}
+
+body {
+  // Clip full-bleed sections at the page edge without creating a scroll container.
+  // The carousel keeps its own horizontal scrolling, and sticky headers still work.
+  overflow-x: clip;
+}
+
+#root {
+  width: 100%;
+  max-width: var(--site-max-width);
+  margin-inline: auto;
+}
+
+.delivery-carousel {
+  --carousel-gutter: var(--page-gutter);
+}
+
+.carousel-section > h2 {
+  max-width: none;
+  margin-inline: var(--page-gutter);
+  text-align: left;
+}
+
+.carousel-section .carousel-controls {
+  max-width: none;
+  margin-inline: var(--page-gutter);
+}
+
+.delivery-carousel.carousel-fits > .carousel-track {
+  justify-content: flex-start;
+}
+
+@media (min-width: 1440px) {
+  .carousel-section {
+    overflow: visible;
+  }
+
+  .delivery-carousel {
+    width: calc((100vw + var(--site-max-width)) / 2);
+    margin-inline: 0;
+  }
+
+  .carousel-section .carousel-controls {
+    width: calc((100vw + var(--site-max-width)) / 2 - 2 * var(--page-gutter));
+    margin-inline: var(--page-gutter);
+  }
+}
+
+#sect-hero {
+  --hero-max-width: 1920px;
+  --hero-background-image: none;
+
+  position: relative;
+  height: auto;
+  max-height: none;
+  min-height: calc(100svh - var(--site-header-height, 80px));
+  overflow: visible;
+  background: transparent;
+}
+
+#sect-hero > .hero-shell {
+  min-height: inherit;
+  padding-block: 48px;
+  padding-inline: var(--page-gutter);
+}
+
+#sect-hero .hero-content,
+#sect-hero .hero-copy {
+  align-items: flex-start;
+  text-align: left;
+}
+
+#sect-hero > .hero-shell > .hero-content {
+  flex: 1;
+  justify-content: flex-end;
+  padding-block: 0;
+}
+
+#sect-hero > .hero-shell > .hero-content > .hero-copy {
+  animation: none;
+}
+
+#sect-hero #hero-title {
+  color: #fff;
+  line-height: 0.85;
+  text-align: left;
+  text-wrap: balance;
+}
+
+@media (min-width: 1024px) {
+  #sect-hero #hero-title {
+    max-width: 75%;
+  }
+}
+
+#sect-hero #hero-title.flow-heading > .accent {
+  display: inline;
+}
+#sect-hero #hero-title.flow-heading [data-heading-word] {
+  display: inline-block;
+}
+@media (prefers-reduced-motion: no-preference) {
+  #sect-hero[data-intro="pending"] #hero-title [data-heading-word],
+  #sect-hero #hero-title:not([data-lines-ready]) [data-heading-word] {
+    opacity: 0;
+  }
+  #sect-hero[data-intro="ready"]
+    #hero-title[data-lines-ready]
+    [data-heading-word] {
+    animation: hero-heading-rise 700ms cubic-bezier(0.22, 1, 0.36, 1)
+      var(--line-delay, 0ms) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+// Browser wrapping is the source of truth; measured rows control reveal timing.
+.flow-heading {
+  text-wrap: balance;
+  [data-heading-word] {
+    display: inline-block;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .flow-heading.heading-reveal-ready:not(.heading-revealed) [data-heading-word],
+  .flow-heading.heading-reveal-ready:not([data-lines-ready])
+    [data-heading-word] {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .flow-heading.heading-revealed[data-lines-ready] [data-heading-word] {
+    animation: hero-text-rise 700ms var(--ease) var(--line-delay, 0ms) both;
+  }
+}
+
+@media (max-width: 767px) {
+  #body p,
+  #foot p,
+  .compensation-cookies p {
+    line-height: 1.3;
+  }
+}
+
+#body :is(h1, h2, h3, h4, h5, h6),
+#body #hero-title {
+  line-height: calc(
+    var(--heading-line-height, 0.85) * var(--heading-line-height-scale, 1)
+  );
+}
+header:is([lang="hy"], [lang="ka"]) a,
+#foot:is([lang="hy"], [lang="ka"]),
+#foot:is([lang="hy"], [lang="ka"]) a {
+  font-family: "Google Sans", sans-serif;
+  line-height: 1.3;
+}
+
+#foot:is([lang="hy"], [lang="ka"]) nav a {
+  font-weight: 700;
+}
+
+#body:is([lang="hy"], [lang="ka"]) :is(h1, h2, h3, h4, p) {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 767px) {
+  :root {
+    --mobile-heading-size: clamp(36px, calc(11.429vw - 0.571px), 44px);
+    --heading-font-size: var(--mobile-heading-size);
+    --h2-font-size: var(--mobile-heading-size);
+    --mobile-pill-font-size: 32px;
+    --mobile-pill-padding: 20px 24px;
+    --mobile-pill-line-height: 1;
+    --mobile-pill-letter-spacing: -0.03em;
+  }
+
+  #body h2,
+  #sect-hero #hero-title {
+    font-size: calc(var(--h2-font-size) * var(--heading-size-scale, 1));
+  }
+}
+
+#body:is([lang="uz"], [lang="ky"], [lang="be"])
+  :is(h1, h2, h3, h4, p, .faq-question) {
+  overflow-wrap: anywhere;
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shared_settings",
+  "info": {
+    "singularName": "shared-setting",
+    "pluralName": "shared-settings",
+    "displayName": "Shared settings"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "language": {
+      "type": "enumeration",
+      "enum": [
+        "ru",
+        "uz",
+        "ky",
+        "hy",
+        "ka",
+        "be"
+      ],
+      "required": true
+    },
+    "header": {
+      "type": "component",
+      "component": "page.header",
+      "repeatable": false
+    },
+    "footer": {
+      "type": "component",
+      "component": "page.footer",
+      "repeatable": false
+    },
+    "cookie": {
+      "type": "component",
+      "component": "page.cookie",
+      "repeatable": false
+    },
+    "accessibility": {
+      "type": "component",
+      "component": "site.accessibility",
+      "repeatable": false
+    },
+    "links": {
+      "type": "component",
+      "component": "site.links",
+      "repeatable": false
+    }
+  }
+}

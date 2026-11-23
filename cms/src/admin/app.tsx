@@ -1,0 +1,169 @@
+import { markPreviewSections } from "./preview-sections";
+import { ContentChecksPanel } from "./components/ContentChecks";
+import { markContentEditor } from "./content-editor";
+import type { StrapiApp } from "@strapi/strapi/admin";
+import type { ContentManagerPlugin } from "@strapi/content-manager/strapi-admin";
+import { LivePreviewPanel } from "./components/LivePreview";
+import { darkTheme, lightTheme } from "@strapi/design-system";
+import authLogo from "./assets/wb-taxi-auth.svg";
+import menuLogo from "./assets/wb-mark.svg";
+import "./styles.css";
+import { translateEditorLabels } from "./translations";
+import { markLinkPresets } from "./link-presets";
+import { markFieldLabels } from "./field-labels";
+
+export default {
+  config: {
+    auth: { logo: authLogo },
+    menu: { logo: menuLogo },
+    locales: ["ru"],
+    theme: {
+      light: {
+        ...lightTheme,
+        borderRadius: "10px",
+        colors: {
+          ...lightTheme.colors,
+          primary100: "#fff0ff",
+          primary200: "#ffd6fd",
+          primary500: "#c000d8",
+          primary600: "#b000c8",
+          primary700: "#8c00a3",
+          buttonPrimary500: "#9900b0",
+          buttonPrimary600: "#b000c8",
+          buttonNeutral0: "#ffffff",
+          alternative100: "#f5edff",
+          alternative200: "#e7d5ff",
+          alternative500: "#a73afd",
+          alternative600: "#8421d4",
+          alternative700: "#6615ac",
+          neutral100: "#f5f5f5",
+          neutral150: "#ededed",
+          neutral200: "#e0e0e0",
+        },
+        shadows: {
+          ...lightTheme.shadows,
+          focus: "0 0 0 2px #ffd6fd",
+          focusShadow: "0 0 0 2px #ffd6fd",
+          tableShadow: "0 2px 12px rgba(0, 0, 0, 0.05)",
+        },
+      },
+      dark: {
+        ...darkTheme,
+        borderRadius: "10px",
+        colors: {
+          ...darkTheme.colors,
+          primary100: "#24153d",
+          primary200: "#493078",
+          primary500: "#a880ff",
+          primary600: "#c3a6ff",
+          primary700: "#dacaff",
+          buttonPrimary500: "#661aff",
+          buttonPrimary600: "#5410df",
+          buttonNeutral0: "#ffffff",
+          alternative100: "#24153d",
+          alternative200: "#493078",
+          alternative500: "#a880ff",
+          alternative600: "#c3a6ff",
+          alternative700: "#dacaff",
+          neutral0: "#1c1c1c",
+          neutral100: "#121212",
+          neutral150: "#262626",
+          neutral200: "#383838",
+        },
+        shadows: {
+          ...darkTheme.shadows,
+          focus: "0 0 0 2px #a880ff",
+          focusShadow: "0 0 0 2px #a880ff",
+        },
+      },
+    },
+    translations: {
+      en: {
+        "Auth.form.welcome.title": "WB Taxi CMS",
+        "Auth.form.welcome.subtitle": "Manage pages, news and tariffs.",
+        "app.components.LeftMenu.navbrand.title": "WB Taxi CMS",
+        "app.components.LeftMenu.navbrand.workplace": "Content workspace",
+        "app.components.LeftMenu.logo.alt": "WB Taxi",
+      },
+      ru: {
+        "Auth.form.welcome.title": "WB Taxi CMS",
+        "Auth.form.welcome.subtitle":
+          "Страницы, новости и тарифы — в одном месте.",
+        "app.components.LeftMenu.navbrand.title": "WB Taxi CMS",
+        "app.components.LeftMenu.navbrand.workplace": "Управление контентом",
+        "app.components.LeftMenu.logo.alt": "WB Taxi",
+      },
+    },
+  },
+  register(app: StrapiApp) {
+    app.customFields.register({
+      name: "story-kind", type: "enumeration",
+      intlLabel: { id: "wb.story-kind", defaultMessage: "Content type" },
+      intlDescription: { id: "wb.story-kind.description", defaultMessage: "Card, article or link" },
+      components: { Input: () => import("./components/StoryKind") },
+    });
+    app.customFields.register({
+      name: "country-select", type: "enumeration",
+      intlLabel: { id: "wb.country", defaultMessage: "Country" },
+      intlDescription: { id: "wb.country.description", defaultMessage: "Country for this content" },
+      components: { Input: () => import("./components/CountrySelect") },
+    });
+    app.customFields.register({
+      name: "country-language", type: "enumeration",
+      intlLabel: { id: "wb.language", defaultMessage: "Language" },
+      intlDescription: { id: "wb.language.description", defaultMessage: "Languages supported in the selected country" },
+      components: { Input: () => import("./components/CountryLanguage") },
+    });
+  },
+  bootstrap(app: StrapiApp) {
+    const manager = app.getPlugin("content-manager")
+      .apis as ContentManagerPlugin["config"]["apis"];
+    manager.addEditViewSidePanel([LivePreviewPanel, ContentChecksPanel]);
+    document.body.classList.add("wb-taxi-admin");
+    const favicon =
+      document.querySelector<HTMLLinkElement>('link[rel="icon"]') ||
+      document.createElement("link");
+    favicon.rel = "icon";
+    favicon.type = "image/svg+xml";
+    favicon.href = menuLogo;
+    document.head.appendChild(favicon);
+
+    // Section labels are generated by Strapi; mark them without relying on
+    // generated styled-components classes or changing ordinary field labels.
+    const markSectionTitles = () => {
+      document
+        .querySelectorAll<HTMLLabelElement>("main label")
+        .forEach((label) => {
+          const text = (label.dataset.wbOriginalLabel || label.textContent?.replace(/\*/g, "").trim()) || "";
+          label.toggleAttribute(
+            "data-wb-section-title",
+            /^(0[1-7]\.\s|Header and navigation$|Footer$|Cookie notice$|Шапка и навигация$|Подвал сайта$|Уведомление о cookies$)/.test(
+              text,
+            ),
+          );
+        });
+    };
+    let scheduled = false;
+    const observer = new MutationObserver(() => {
+      if (scheduled) return;
+      scheduled = true;
+      requestAnimationFrame(() => {
+        scheduled = false;
+        markSectionTitles();
+        markFieldLabels();
+        markLinkPresets();
+        translateEditorLabels();
+        markContentEditor();
+        markPreviewSections();
+      });
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+    markSectionTitles();
+    markFieldLabels();
+    markLinkPresets();
+    translateEditorLabels();
+    markContentEditor();
+    markPreviewSections();
+  },
+};

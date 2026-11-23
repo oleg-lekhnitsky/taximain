@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_site_cities",
+  "info": {
+    "displayName": "City"
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,2 @@
+import { factories } from "@strapi/strapi";
+export default factories.createCoreRouter("api::shared-setting.shared-setting");

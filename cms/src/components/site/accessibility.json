@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_site_accessibility",
+  "info": {
+    "displayName": "Accessibility"
+  },
+  "attributes": {
+    "carouselLabel": {
+      "type": "text"
+    },
+    "carouselPositionLabel": {
+      "type": "text"
+    },
+    "previousSlideLabel": {
+      "type": "text"
+    },
+    "nextSlideLabel": {
+      "type": "text"
+    },
+    "qrImageDescription": {
+      "type": "text"
+    },
+    "googlePlayLabel": {
+      "type": "text"
+    },
+    "appStoreLabel": {
+      "type": "text"
+    }
+  }
+}

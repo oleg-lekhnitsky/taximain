@@ -1,0 +1,81 @@
+{
+  "collectionName": "components_news_support_articles",
+  "info": {
+    "displayName": "Support article",
+    "description": "Structured content preserving the existing support article layout."
+  },
+  "attributes": {
+    "intro": {
+      "type": "text",
+      "required": true
+    },
+    "qualityBefore": {
+      "type": "text",
+      "required": true
+    },
+    "qualityStrong": {
+      "type": "text",
+      "required": true
+    },
+    "qualityAfter": {
+      "type": "text",
+      "required": true
+    },
+    "helpHeading": {
+      "type": "text",
+      "required": true
+    },
+    "helpBefore": {
+      "type": "text",
+      "required": true
+    },
+    "appLinkLabel": {
+      "type": "text",
+      "required": true
+    },
+    "tripsLabel": {
+      "type": "text",
+      "required": true
+    },
+    "selectTrip": {
+      "type": "text",
+      "required": true
+    },
+    "helpLabel": {
+      "type": "text",
+      "required": true
+    },
+    "helpAfter": {
+      "type": "text",
+      "required": true
+    },
+    "resolutionHeading": {
+      "type": "text",
+      "required": true
+    },
+    "resolutionBefore": {
+      "type": "text",
+      "required": true
+    },
+    "resolutionStrong": {
+      "type": "text",
+      "required": true
+    },
+    "resolutionAfter": {
+      "type": "text",
+      "required": true
+    },
+    "contactParagraph": {
+      "type": "text",
+      "required": true
+    },
+    "thanks": {
+      "type": "text",
+      "required": true
+    },
+    "signature": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.download {
+  width: auto;
+  margin-top: 12px;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 4px;
+  }
+}
+
+.backdrop {
+  position: absolute;
+  top: calc(-1 * var(--site-header-height, 80px));
+  bottom: 0;
+  left: 50%;
+  width: min(100vw, 1920px);
+  transform: translateX(-50%);
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: #ff00ff;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgb(0 0 0 / 45%), rgb(0 0 0 / 12%) 32%, transparent 65%);
+  }
+}
+@media (width > 1920px) {
+  .backdrop { border-radius: 40px; }
+}

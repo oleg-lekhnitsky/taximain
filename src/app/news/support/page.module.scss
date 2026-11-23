@@ -1,0 +1,141 @@
+.article {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 40px var(--page-gutter) 0;
+  color: #000;
+}
+
+.title {
+  width: min(100%, 676px);
+  margin: 0;
+  color: inherit;
+  font-family: "WB Sans", sans-serif;
+  font-size: calc(72px * var(--heading-size-scale, 1));
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: var(--heading-letter-spacing);
+  text-align: left;
+  text-wrap: balance;
+}
+
+.body {
+  display: flex;
+  width: min(100%, 676px);
+  flex-direction: column;
+  gap: 40px;
+  font-family: "Google Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.647059;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+
+  p {
+    margin: 0;
+    font-size: 17px;
+    line-height: inherit;
+    text-wrap: pretty;
+  }
+
+  strong,
+  b {
+    font-weight: 600;
+  }
+
+  a {
+    color: inherit;
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-color: rgb(0 0 0 / 44%);
+    text-underline-offset: 2px;
+    transition:
+      color 150ms var(--ease),
+      text-decoration-color 150ms var(--ease);
+
+    &:hover {
+      color: #a73afd;
+      text-decoration-color: currentColor;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #a73afd;
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+  }
+
+  code {
+    padding: 2px 4px;
+    border-radius: 4px;
+    background: rgb(102 26 255 / 8%);
+    color: inherit;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 0.875em;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .body a {
+    transition: none;
+  }
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bodySection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  h2 {
+    margin: 0;
+    font-family: "WB Sans", sans-serif;
+    font-size: calc(32px * var(--heading-size-scale, 1));
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    text-wrap: pretty;
+  }
+}
+
+.body .signature {
+  font-family: "WB Sans", sans-serif;
+  font-weight: 500;
+}
+
+.related > h2 {
+  font-size: calc(72px * var(--heading-size-scale, 1));
+  line-height: 0.84;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 767px) {
+  .article {
+    gap: 32px;
+    padding-top: 16px;
+  }
+
+  .title {
+    font-size: calc(clamp(36px, 8vw, 56px) * var(--heading-size-scale, 1));
+  }
+
+  .body {
+    font-size: 17px;
+    line-height: 1.647059;
+  }
+  .bodySection h2 {
+    font-size: calc(28px * var(--heading-size-scale, 1));
+  }
+  .related > h2 {
+    font-size: calc(40px * var(--heading-size-scale, 1));
+  }
+}

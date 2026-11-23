@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_page_footer_sections",
+  "info": {
+    "displayName": "Footer",
+    "description": "Content for the Footer block on the website."
+  },
+  "attributes": {
+    "tariffsLabel": {
+      "type": "text",
+      "required": true
+    },
+    "userAgreementLabel": {
+      "type": "text",
+      "required": true
+    },
+    "privacyPolicyLabel": {
+      "type": "text",
+      "required": true
+    },
+    "serviceRulesLabel": {
+      "type": "text",
+      "required": true
+    },
+    "legalHeading": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,135 @@
+/* Use the original hero's normal-flow layout instead of fixed text offsets. */
+.hero-shell,
+.hero-content,
+.hero-copy {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.hero-shell {
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+#sect-hero {
+  height: auto;
+  max-height: none;
+  min-height: 0;
+  padding: 0;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+#sect-hero > .hero-shell {
+  display: flex;
+  position: relative;
+}
+#sect-hero .hero-content {
+  position: relative;
+  width: 100%;
+  gap: 32px;
+  padding: 0;
+}
+#sect-hero .hero-copy {
+  gap: 12px;
+}
+@media (min-width: 768px) {
+  #sect-hero .hero-copy {
+    gap: 24px;
+  }
+}
+@media (min-width: 1024px) {
+  #sect-hero .hero-content {
+    gap: 24px;
+  }
+  #sect-hero .hero-copy {
+    gap: 32px;
+  }
+}
+/* Verbatim local-desktop-hero from the original page. */
+
+@media (min-width: 1024px) {
+  #sect-hero {
+    min-height: 100vh;
+  }
+  #sect-hero > div {
+    min-height: calc(100vh - 48px);
+    padding-top: 0;
+  }
+  #sect-hero > div > div:first-child {
+    flex: 1;
+    justify-content: center;
+    padding-block: 48px;
+  }
+  #sect-hero > div > div:last-child {
+    flex-shrink: 0;
+    margin-top: 0;
+  }
+}
+
+/* Verbatim local-mobile-hero-top-gap from the original page. */
+
+@media (max-width: 1023px) {
+  #sect-hero > div {
+    padding-top: 80px;
+  }
+}
+
+/* Verbatim local-mobile-hero-full-height from the original page. */
+
+@media (max-width: 1023px) {
+  #sect-hero {
+    min-height: calc(100svh - var(--site-header-height, 52px));
+  }
+  #sect-hero > div {
+    min-height: calc(100svh - var(--site-header-height, 52px));
+    padding-top: 0;
+    padding-bottom: 24px;
+  }
+  #sect-hero > div > div:first-child {
+    flex: 1;
+    justify-content: center;
+    padding-top: clamp(32px, 6svh, 80px);
+    padding-bottom: 0;
+  }
+  #sect-hero > div > div:last-child {
+    flex-shrink: 0;
+  }
+}
+
+/* Crop the outer boundary without redistributing the inner flex layout. */
+#sect-hero {
+  height: var(--hero-crop-height, auto);
+  min-height: 0;
+  overflow-x: clip;
+  overflow-y: visible;
+  z-index: 1;
+  isolation: isolate;
+}
+#sect-hero > .hero-shell {
+  flex-shrink: 0;
+}
+/* Place tablet content above the hero shadow without clipping the artwork. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #sect-hero {
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+  #sect-send {
+    position: relative;
+    z-index: 2;
+  }
+}
+@media (min-width: 600px) and (max-width: 1023px) {
+  #sect-hero .hero-content {
+    gap: 16px;
+  }
+}
+@media (max-width: 599px) {
+  #sect-hero .hero-content {
+    gap: 16px;
+  }
+  #sect-hero .hero-copy {
+    gap: 16px;
+  }
+}

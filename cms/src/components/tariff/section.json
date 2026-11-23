@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_tariff_sections",
+  "info": {
+    "displayName": "Tariff section"
+  },
+  "attributes": {
+    "sectionId": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "entries": {
+      "type": "component",
+      "repeatable": true,
+      "component": "tariff.entry"
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

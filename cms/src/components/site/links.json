@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_site_links",
+  "info": {
+    "displayName": "Download and legal links"
+  },
+  "attributes": {
+    "googlePlayUrl": {
+      "type": "string"
+    },
+    "appStoreUrl": {
+      "type": "string"
+    },
+    "userAgreementUrl": {
+      "type": "string"
+    },
+    "privacyPolicyUrl": {
+      "type": "string"
+    },
+    "serviceRulesUrl": {
+      "type": "string"
+    }
+  }
+}

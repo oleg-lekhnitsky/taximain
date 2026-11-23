@@ -1,0 +1,51 @@
+.heading:global(#terms-title) {
+  max-width: 75%;
+}
+
+.track {
+  column-gap: var(--carousel-grid-gap);
+  padding-block: 10px;
+}
+
+.imageCard:global(.term-card) {
+  flex: 0 0 auto;
+  width: var(--carousel-card-width);
+  height: auto;
+  padding: var(--page-gutter);
+  padding-bottom: calc(var(--page-gutter) + 8px);
+  background: #ffe1ff;
+  overflow: visible;
+  display: block;
+}
+
+.artwork {
+  position: relative;
+  background: #ff00ff;
+  width: 100%;
+  aspect-ratio: 890 / 998;
+  border-radius: inherit;
+  corner-shape: inherit;
+  overflow: hidden;
+}
+
+.imageCard .caption {
+  margin: 24px 0 0;
+  font-family: "WB Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}

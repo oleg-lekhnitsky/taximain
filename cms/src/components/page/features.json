@@ -1,0 +1,89 @@
+{
+  "collectionName": "components_page_features_sections",
+  "info": {
+    "displayName": "02. Features",
+    "description": "Content for the Features block on the website."
+  },
+  "attributes": {
+    "heading": {
+      "type": "text",
+      "required": true
+    },
+    "headingLine1": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "headingLine2Accent": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "headingLine2Text": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "headingLine3": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "tariffsCardLabel": {
+      "type": "text",
+      "required": true
+    },
+    "arrivalCardLabel": {
+      "type": "text",
+      "required": true
+    },
+    "servicesCardLabel": {
+      "type": "text",
+      "required": true
+    },
+    "carouselLabel": {
+      "type": "text",
+      "required": true
+    },
+    "carouselPositionLabel": {
+      "type": "text",
+      "required": true
+    },
+    "previousSlideLabel": {
+      "type": "text",
+      "required": true
+    },
+    "nextSlideLabel": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

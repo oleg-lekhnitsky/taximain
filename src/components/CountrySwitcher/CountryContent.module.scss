@@ -1,0 +1,134 @@
+.content[lang="hy"] {
+  --heading-size-scale: 0.65;
+}
+
+.content:is([lang="ka"], [lang="ky"]) {
+  --heading-size-scale: 0.8;
+}
+
+.content[lang="uz"] {
+  --heading-size-scale: 0.9;
+}
+
+.content {
+  --heading-line-height: 0.85;
+  --heading-line-height-scale: 1;
+  --page-ease: cubic-bezier(0.16, 1.35, 0.3, 1);
+
+  &[data-transition="enter"] {
+    animation:
+      country-enter-opacity 490ms var(--page-ease),
+      country-enter-move 460ms var(--page-ease);
+  }
+
+  &[data-transition="exit"] {
+    animation:
+      country-exit-opacity 490ms var(--page-ease) both,
+      country-exit-move 460ms var(--page-ease) both;
+    pointer-events: none;
+  }
+}
+
+.content:is([lang="hy"], [lang="ka"]) {
+  --heading-line-height-scale: calc(1.05 / 0.85);
+}
+
+@media (min-width: 768px) {
+  .content[lang="uz"] {
+    --heading-size-scale: 0.85;
+    --heading-line-height-scale: calc(0.95 / 0.85);
+  }
+}
+
+@media (max-width: 767px) {
+  .content[lang="hy"] {
+    --heading-size-scale: 0.85;
+  }
+
+  .content {
+    --heading-line-height: 1;
+  }
+
+  .content:is([lang="hy"], [lang="ka"]) {
+    --heading-line-height-scale: 1;
+  }
+
+  .content[lang="ru"] {
+    --heading-line-height-scale: 0.9;
+  }
+}
+
+// These country versions use Google Sans for content, with bold display text.
+:global(#body).content:is([lang="hy"], [lang="ka"]) {
+  :global(button),
+  :global(button *),
+  :global([data-download-cta]) {
+    font-weight: 700;
+  }
+}
+
+:global(#body).content:is([lang="hy"], [lang="ka"]) {
+  &,
+  :global(*) {
+    font-family: "Google Sans", sans-serif;
+  }
+
+  :global(h1),
+  :global(h2),
+  :global(h3),
+  :global(h4),
+  :global(h1 *),
+  :global(h2 *),
+  :global(h3 *),
+  :global(h4 *),
+  :global(.faq-question),
+  :global(.faq-question *),
+  :global(strong),
+  :global(b) {
+    font-weight: 700;
+  }
+}
+
+@keyframes country-exit-opacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes country-exit-move {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(40px);
+  }
+}
+
+@keyframes country-enter-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes country-enter-move {
+  from {
+    transform: translateY(30px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content,
+  .content[data-transition="enter"],
+  .content[data-transition="exit"] {
+    animation: none;
+  }
+}

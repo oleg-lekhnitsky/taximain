@@ -1,0 +1,14 @@
+.logo {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  height: var(--logo-height, 48px);
+  width: calc(var(--logo-height, 48px) * 196.956 / 56);
+  aspect-ratio: 196.956 / 56;
+  vertical-align: middle;
+}
+
+.artwork {
+  display: block;
+  object-fit: contain;
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tariff_documents",
+  "info": {
+    "singularName": "tariff-document",
+    "pluralName": "tariff-documents",
+    "displayName": "Tariff document"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "country": {
+      "type": "customField",
+      "enum": [
+        "uz",
+        "kg",
+        "am",
+        "ge",
+        "by"
+      ],
+      "required": true,
+      "customField": "global::country-select"
+    },
+    "language": {
+      "type": "customField",
+      "enum": [
+        "ru",
+        "uz",
+        "ky",
+        "hy",
+        "ka",
+        "be"
+      ],
+      "required": true,
+      "default": "ru",
+      "customField": "global::country-language"
+    },
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "sections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "tariff.section"
+    }
+  }
+}

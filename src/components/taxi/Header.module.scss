@@ -1,0 +1,163 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: #fff;
+}
+
+.desktopShell {
+  display: none;
+  padding: 8px;
+}
+
+.desktopToolbar {
+  display: flex;
+  height: 48px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.desktopHome,
+.mobileHome {
+  position: relative;
+  display: flex;
+  width: auto;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.desktopHome {
+  height: 48px;
+}
+
+.navigation {
+  display: flex;
+  height: 48px;
+  align-items: center;
+}
+
+.navigationLink {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-family: "Google Sans", "ALS Hauss", sans-serif;
+  font-weight: 500;
+  line-height: 0.81;
+  color: #000;
+  text-decoration: none;
+}
+
+.mobileShell {
+  position: relative;
+}
+
+.mobileInset {
+  padding: 4px 4px 0;
+}
+
+.mobileToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 20px 6px 6px;
+  background: #fff;
+  box-shadow: 0 7px 13.5px rgb(0 0 0 / 5%);
+}
+
+.menuButton {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 0;
+  background: transparent;
+}
+
+@media (min-width: 768px) {
+  .mobileInset {
+    padding: 20px 20px 0;
+  }
+  .mobileToolbar {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+  .menuButton {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktopShell {
+    display: block;
+  }
+  .mobileShell {
+    display: none;
+  }
+}
+
+.desktopLogo {
+  --logo-height: 48px;
+}
+
+.mobileLogo {
+  --logo-height: 48px;
+}
+
+.desktopActions {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+}
+
+.mobileActions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+:global(#mobile-header-toolbar).mobileToolbar {
+  height: auto;
+}
+
+.logoSwap {
+  display: inline-grid;
+  height: var(--logo-height, 48px);
+  aspect-ratio: 196.956 / 56;
+  vertical-align: middle;
+}
+
+.whiteLogo,
+.colorLogo {
+  grid-area: 1 / 1;
+  transition: opacity 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.whiteLogo {
+  opacity: 0;
+}
+
+.colorLogo {
+  opacity: 1;
+}
+
+.logoSwap[data-white="true"] {
+  .whiteLogo {
+    opacity: 1;
+  }
+  .colorLogo {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whiteLogo,
+  .colorLogo {
+    transition: none;
+  }
+}

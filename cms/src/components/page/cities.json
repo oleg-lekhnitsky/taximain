@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_page_cities_sections",
+  "info": {
+    "displayName": "03. Cities",
+    "description": "Content for the Cities block on the website."
+  },
+  "attributes": {
+    "heading": {
+      "type": "text",
+      "required": true
+    },
+    "headingLine1": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "headingLine2": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "cities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "site.city"
+    }
+  }
+}

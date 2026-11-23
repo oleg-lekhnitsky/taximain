@@ -72,3 +72,10 @@ Strapi 5 in `cms/` supplies published page copy, FAQs, city lists, hero images, 
 `npm run cms:seed` imports current content and images without overwriting existing CMS records, and configures the server-only connection in `.env.local`. Stop the CMS before seeding. See [the CMS guide](cms/README.md) for setup, editing, backups, and publishing checks. With `STRAPI_URL` unset, the site uses its original local content.
 
 # taximain
+
+## Railway
+
+The website and CMS run as separate services backed by PostgreSQL and persistent
+uploads. See [.railway/README.md](.railway/README.md) for the infrastructure setup.
+Push code changes to `main` to deploy; edit published content in the deployed CMS.
+Local credentials, databases, uploads and migration archives are excluded from Git.

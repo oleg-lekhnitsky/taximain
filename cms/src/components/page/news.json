@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_page_news_sections",
+  "info": {
+    "displayName": "07. News",
+    "description": "Content for the News block on the website."
+  },
+  "attributes": {
+    "heading": {
+      "type": "text",
+      "required": true
+    },
+    "relatedNewsHeading": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

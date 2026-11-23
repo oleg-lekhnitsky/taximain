@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_page_cookie_sections",
+  "info": {
+    "displayName": "Cookie notice",
+    "description": "Content for the Cookie notice block on the website."
+  },
+  "attributes": {
+    "message": {
+      "type": "blocks",
+      "required": true
+    },
+    "textBeforeLink": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "textAfterLink": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "buttonLabel": {
+      "type": "text",
+      "required": true
+    },
+    "accessibilityLabel": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

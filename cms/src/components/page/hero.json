@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_page_hero_sections",
+  "info": {
+    "displayName": "01. Hero",
+    "description": "Content for the Hero block on the website."
+  },
+  "attributes": {
+    "heading": {
+      "type": "text",
+      "required": true
+    },
+    "buttonLabel": {
+      "type": "text",
+      "required": true
+    },
+    "location": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ],
+      "required": true
+    },
+    "retinaImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    }
+  }
+}

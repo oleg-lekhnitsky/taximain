@@ -1,0 +1,153 @@
+{
+  "collectionName": "components_site_copies",
+  "info": {
+    "displayName": "Localized copy",
+    "description": "Text fields and ordered text arrays used by the existing site layout."
+  },
+  "attributes": {
+    "picker": {
+      "type": "json",
+      "required": true
+    },
+    "carousel": {
+      "type": "json",
+      "required": true
+    },
+    "hero": {
+      "type": "text",
+      "required": true
+    },
+    "location": {
+      "type": "text",
+      "required": false
+    },
+    "conditions": {
+      "type": "text",
+      "required": true
+    },
+    "faqNav": {
+      "type": "text",
+      "required": true
+    },
+    "partners": {
+      "type": "text",
+      "required": true
+    },
+    "order": {
+      "type": "json",
+      "required": true
+    },
+    "features": {
+      "type": "json",
+      "required": true
+    },
+    "daily": {
+      "type": "json",
+      "required": true
+    },
+    "cashback": {
+      "type": "json",
+      "required": true
+    },
+    "cashbackSubtitle": {
+      "type": "text",
+      "required": true
+    },
+    "upTo": {
+      "type": "text",
+      "required": true
+    },
+    "upToAfter": {
+      "type": "boolean",
+      "required": true
+    },
+    "cashbackTerms": {
+      "type": "text",
+      "required": true
+    },
+    "downloads": {
+      "type": "json",
+      "required": true
+    },
+    "download": {
+      "type": "json",
+      "required": true
+    },
+    "downloadButton": {
+      "type": "text",
+      "required": true
+    },
+    "scan": {
+      "type": "json",
+      "required": true
+    },
+    "qrAlt": {
+      "type": "text",
+      "required": true
+    },
+    "scanApp": {
+      "type": "text",
+      "required": true
+    },
+    "play": {
+      "type": "text",
+      "required": true
+    },
+    "appStore": {
+      "type": "text",
+      "required": true
+    },
+    "faqTitle": {
+      "type": "json",
+      "required": true
+    },
+    "news": {
+      "type": "text",
+      "required": true
+    },
+    "related": {
+      "type": "text",
+      "required": true
+    },
+    "footer": {
+      "type": "json",
+      "required": true
+    },
+    "legal": {
+      "type": "text",
+      "required": true
+    },
+    "cookiesBefore": {
+      "type": "text",
+      "required": true
+    },
+    "cookiesAfter": {
+      "type": "text",
+      "required": true
+    },
+    "okay": {
+      "type": "text",
+      "required": true
+    },
+    "cookiesLabel": {
+      "type": "text",
+      "required": true
+    },
+    "openMenu": {
+      "type": "text",
+      "required": true
+    },
+    "closeMenu": {
+      "type": "text",
+      "required": true
+    },
+    "navigation": {
+      "type": "text",
+      "required": true
+    },
+    "version": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

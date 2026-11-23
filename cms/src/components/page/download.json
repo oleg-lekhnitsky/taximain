@@ -1,0 +1,85 @@
+{
+  "collectionName": "components_page_download_sections",
+  "info": {
+    "displayName": "05. App download",
+    "description": "Content for the App download block on the website."
+  },
+  "attributes": {
+    "heading": {
+      "type": "text",
+      "required": true
+    },
+    "scanText": {
+      "type": "text",
+      "required": true
+    },
+    "headingLine1": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "headingLine2": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "scanLine1": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "scanLine2": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "qrImageDescription": {
+      "type": "text",
+      "required": true
+    },
+    "scanAppLabel": {
+      "type": "text",
+      "required": true
+    },
+    "googlePlayLabel": {
+      "type": "text",
+      "required": true
+    },
+    "appStoreLabel": {
+      "type": "text",
+      "required": true
+    },
+    "buttonLabel": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

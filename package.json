@@ -1,0 +1,39 @@
+{
+  "name": "wb-track-compensation",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint",
+    "cms:dev": "npm --prefix cms run develop",
+    "cms:build": "npm --prefix cms run build",
+    "cms:start": "npm --prefix cms run start",
+    "cms:seed": "tsx scripts/seed-cms.mjs",
+    "cms:check": "node scripts/check-cms.mjs",
+    "cms:organize": "tsx scripts/organize-cms.mjs",
+    "cms:preview:setup": "node scripts/setup-cms-preview.mjs",
+    "cms:seed:shared": "node scripts/seed-shared-settings.mjs",
+    "cms:check:shared": "node --import tsx scripts/check-shared-settings.mjs"
+  },
+  "dependencies": {
+    "@ui-sdk/react": "^0.1.0-beta.6",
+    "next": "16.4.6",
+    "qrcode": "^1.5.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "railway": "^3.17.0",
+    "sass": "^1.108.2",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "collectionName": "components_page_cashback_sections",
+  "info": {
+    "displayName": "04. Cashback",
+    "description": "Content for the Cashback block on the website."
+  },
+  "attributes": {
+    "heading": {
+      "type": "text",
+      "required": true
+    },
+    "headingLine1": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "headingLine2": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "subtitle": {
+      "type": "text",
+      "required": true
+    },
+    "ratePrefix": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    },
+    "ratePrefixAfter": {
+      "type": "boolean",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    },
+    "terms": {
+      "type": "text",
+      "required": true
+    },
+    "downloadsValue": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    },
+    "downloadsLabel": {
+      "type": "text",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    },
+    "rate": {
+      "type": "string",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    },
+    "rateText": {
+      "type": "string"
+    },
+    "downloadsText": {
+      "type": "text"
+    }
+  }
+}

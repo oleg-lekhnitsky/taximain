@@ -1,0 +1,24 @@
+@media (min-width: 1024px) {
+  .layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    column-gap: var(--card-gap);
+
+    > h2 {
+      min-width: 0;
+      margin: 0;
+      padding-right: 5%;
+      text-align: left;
+
+      span {
+        max-width: 100%;
+      }
+    }
+
+    > div {
+      max-width: none;
+      margin: 0;
+    }
+  }
+}

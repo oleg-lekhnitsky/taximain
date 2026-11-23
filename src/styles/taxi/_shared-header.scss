@@ -1,0 +1,293 @@
+/* Copied from the original local page; header dimensions come from its existing utility classes. */
+
+#root > header {
+  max-width: none;
+  margin-inline: auto;
+  border-radius: 0;
+}
+
+#root > header nav {
+  gap: 44px;
+}
+#root > header nav a {
+  padding: 0;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+}
+
+@font-face {
+  font-family: "WB Sans Local";
+  src: url("/assets/vendor/wb-track/WBSans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+#root > header nav a {
+  font-family: "WB Sans Local", sans-serif;
+  font-weight: 400;
+}
+#root > header nav .wb-alternate-b {
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+#root > header,
+#root > header div,
+#root > header nav a {
+  border-radius: 0;
+}
+
+#mobile-header-menu {
+  display: none;
+}
+@media (max-width: 1023px) {
+  #root > header {
+    background: transparent;
+  }
+  #root > header #mobile-header-toolbar {
+    position: relative;
+    z-index: 2;
+    border-radius: 24px;
+    background: white;
+  }
+  #root > header .menu-open #mobile-header-toolbar {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: none;
+  }
+  #root > header #mobile-header-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: absolute;
+    top: 100%;
+    left: 4px;
+    right: 4px;
+    padding: 16px 20px 20px;
+    margin: 0;
+    border-radius: 0 0 24px 24px;
+    background: white;
+    box-shadow: 0 12px 18px rgb(0 0 0 / 6%);
+    visibility: hidden;
+    opacity: 0;
+    translate: 0 -8px;
+    pointer-events: none;
+    transition:
+      opacity 160ms ease-out,
+      translate 160ms ease-out,
+      visibility 0s 160ms;
+  }
+  #root > header .menu-open #mobile-header-menu {
+    visibility: visible;
+    opacity: 1;
+    translate: 0;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+  #root > header #mobile-header-menu a {
+    display: block;
+    padding: 12px 0;
+    color: inherit;
+    text-decoration: none;
+    font-family: "WB Sans Local", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  #root > header #mobile-header-menu a:focus-visible {
+    outline: 2px solid #d500ed;
+    outline-offset: 3px;
+  }
+  #mobile-header-toolbar button[aria-controls="mobile-header-menu"] {
+    position: relative;
+  }
+  #mobile-header-toolbar button[aria-controls="mobile-header-menu"]::before {
+    content: "";
+    position: absolute;
+    inset: -12px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #root > header #mobile-header-menu {
+    left: 20px;
+    right: 20px;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+  }
+  #root > header #mobile-header-toolbar {
+    height: 64px;
+    padding: 8px 12px;
+    border-radius: 32px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #root > header #mobile-header-menu {
+    transition: none;
+  }
+}
+
+@media (max-width: 767px) {
+  #mobile-header-shell > div:first-child {
+    padding: 8px 8px 0;
+  }
+  #root > header #mobile-header-menu {
+    left: 8px;
+    right: 8px;
+  }
+}
+
+#mobile-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  background: rgb(0 0 0 / 12%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 160ms ease-out,
+    visibility 0s 160ms;
+}
+@media (max-width: 1023px) {
+  #root > header #mobile-header-toolbar,
+  #root > header #mobile-header-menu {
+    box-shadow: none;
+  }
+  #mobile-menu-backdrop.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #mobile-menu-backdrop {
+    transition: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  #root > header #mobile-header-menu {
+    top: calc(100% - 2px);
+    padding-top: 18px;
+  }
+  #root > header .menu-open #mobile-header-toolbar {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  #mobile-header-toolbar button[aria-controls="mobile-header-menu"] {
+    color: #000;
+    flex-shrink: 0;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 767px) {
+  #root > header #mobile-header-menu {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #root > header #mobile-header-menu {
+    padding-left: 12px;
+    padding-right: 12px;
+    text-align: center;
+  }
+}
+
+/* Pill header; keep dropdowns unclipped and the expanded mobile menu connected. */
+@media (min-width: 1024px) {
+  #root > header {
+    top: 12px;
+    width: calc(100% - 24px);
+    border-radius: 999px;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  #root > header #mobile-header-shell:not(.menu-open) #mobile-header-toolbar {
+    border-radius: 28px;
+  }
+
+  #root > header .menu-open #mobile-header-toolbar {
+    border-radius: 28px 28px 0 0;
+  }
+}
+
+#root > header[data-over-hero="true"] {
+  background: transparent;
+  color: #fff;
+}
+
+#root > header[data-over-hero="true"] nav:not(#mobile-header-menu) a {
+  background: transparent;
+  color: #fff;
+}
+
+@media (hover: hover) {
+  #root > header nav a[href]:hover {
+    color: #d500ed;
+  }
+
+  #root
+    > header[data-over-hero="true"]
+    nav:not(#mobile-header-menu)
+    a[href]:hover {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+  }
+}
+
+@media (max-width: 1023px) {
+  #root
+    > header[data-over-hero="true"]
+    #mobile-header-shell:not(.menu-open)
+    #mobile-header-toolbar {
+    background: transparent;
+  }
+
+  #root
+    > header[data-over-hero="true"]
+    #mobile-header-shell:not(.menu-open)
+    button[aria-controls="mobile-header-menu"] {
+    color: #fff;
+  }
+
+  #root > header #mobile-header-menu {
+    color: #000;
+  }
+}
+
+/* Fade the header surface and foreground together as it crosses the hero. */
+#root > header,
+#root > header #mobile-header-toolbar {
+  transition:
+    background-color 280ms var(--ease),
+    color 280ms var(--ease);
+}
+
+#root > header nav a {
+  transition:
+    opacity 180ms ease-out,
+    background-color 280ms var(--ease),
+    color 280ms var(--ease),
+    scale 150ms ease-out;
+}
+
+#mobile-header-toolbar button[aria-controls="mobile-header-menu"] {
+  transition: color 280ms var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #root > header,
+  #root > header #mobile-header-toolbar,
+  #root > header nav a,
+  #mobile-header-toolbar button[aria-controls="mobile-header-menu"] {
+    transition: none;
+  }
+}

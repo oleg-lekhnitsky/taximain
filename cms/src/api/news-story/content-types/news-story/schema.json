@@ -1,0 +1,121 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_storys",
+  "info": {
+    "singularName": "news-story",
+    "pluralName": "news-stories",
+    "displayName": "News story"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "country": {
+      "type": "customField",
+      "enum": [
+        "uz",
+        "kg",
+        "am",
+        "ge",
+        "by"
+      ],
+      "required": true,
+      "customField": "global::country-select"
+    },
+    "language": {
+      "type": "customField",
+      "enum": [
+        "ru",
+        "uz",
+        "ky",
+        "hy",
+        "ka",
+        "be"
+      ],
+      "required": true,
+      "default": "ru",
+      "customField": "global::country-language"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "body": {
+      "type": "blocks"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "imageAlt": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "storyId": {
+      "type": "string",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "support",
+        "passengers",
+        "grodno"
+      ],
+      "default": "support",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    },
+    "href": {
+      "type": "string"
+    },
+    "supportArticle": {
+      "type": "component",
+      "repeatable": false,
+      "component": "news.support-article",
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    },
+    "contentKind": {
+      "type": "customField",
+      "customField": "global::story-kind",
+      "enum": [
+        "card",
+        "article",
+        "link"
+      ],
+      "required": true,
+      "default": "card"
+    }
+  }
+}

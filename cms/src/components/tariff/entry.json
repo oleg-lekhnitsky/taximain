@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_tariff_entries",
+  "info": {
+    "displayName": "Tariff entry"
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

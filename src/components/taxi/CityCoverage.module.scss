@@ -1,0 +1,235 @@
+.section {
+  overflow: visible;
+  padding-inline: var(--page-gutter);
+}
+
+.section + :global(#cashback) {
+  padding-top: 0;
+}
+
+.heading {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 24px;
+}
+
+.label {
+  margin: 0;
+  padding-top: 4px;
+  font-family: "WB Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+:global(#body:is([lang="hy"], [lang="ka"])) .label {
+  font-weight: 700;
+}
+
+.cities {
+  margin: 0;
+  font-family: "WB Sans", sans-serif;
+  font-size: calc(clamp(64px, 6.667vw, 96px) * var(--heading-size-scale, 1));
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-align: left;
+
+  color: #f0f;
+}
+
+.wheel {
+  --wheel-duration: 12s;
+  --wheel-step: 1.2s;
+  --wheel-radius: 1.6em;
+  position: relative;
+  height: 3.4em;
+  margin-top: -0.15em;
+  overflow: hidden;
+  mask-image: linear-gradient(transparent, #000 8%, #000 92%, transparent);
+}
+
+.drum {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  will-change: transform;
+  animation: none var(--wheel-duration) linear infinite;
+  animation-play-state: paused;
+}
+
+.wheel[data-running="true"] .drum,
+.wheel[data-running="true"] .city {
+  animation-play-state: running;
+}
+
+.city {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1em;
+  margin-top: -0.5em;
+  backface-visibility: hidden;
+  transform: rotateX(var(--city-angle)) translateZ(var(--wheel-radius));
+  white-space: nowrap;
+  animation: city-shade var(--wheel-duration) linear infinite;
+  animation-delay: calc((var(--city-offset) - 10) * var(--wheel-step));
+  animation-play-state: paused;
+
+  > span {
+    font-size: inherit;
+  }
+}
+
+@keyframes city-shade {
+  0%,
+  80%,
+  100% {
+    opacity: 0.93;
+  }
+  10%,
+  70% {
+    opacity: 0.75;
+  }
+  20%,
+  30%,
+  40%,
+  50%,
+  60% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+
+.staticCities {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .city {
+    animation: none;
+  }
+  .drum {
+    display: none;
+    animation: none;
+  }
+  .staticCities {
+    display: block;
+  }
+  .wheel {
+    mask-image: none;
+  }
+}
+
+.car {
+  --rim-turn: -150deg;
+  position: relative;
+  left: 50%;
+  display: block;
+  width: min(125%, 100vw);
+  height: auto;
+  max-width: none;
+  margin-inline: 0;
+  margin-top: -56px;
+  transform: translateX(-50%);
+}
+
+.carBody {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.carWheel {
+  position: absolute;
+  top: 69.36%;
+  width: 8.5%;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #151515;
+}
+
+.rearWheel {
+  left: 28.03%;
+}
+.frontWheel {
+  left: 74.51%;
+}
+
+.rim {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .car:global(.card-reveal-ready):not(:global(.card-revealed)) {
+    opacity: 0;
+    transform: translateX(calc(-50% - 160px));
+  }
+
+  .car:global(.card-reveal-ready):global(.card-revealed) {
+    animation: car-enter 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .car:global(.card-reveal-ready):global(.card-revealed) .rim {
+    animation: rim-roll 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes rim-roll {
+  from {
+    transform: rotate(var(--rim-turn));
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes car-enter {
+  from {
+    opacity: 0;
+    transform: translateX(calc(-50% - 160px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 767px) {
+  .section + :global(#cashback) {
+    padding-top: var(--section-space);
+  }
+
+  .heading {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .label {
+    font-size: 16px;
+    text-align: center;
+  }
+  :global(#body) .cities {
+    font-size: calc(clamp(48px, 15vw, 64px) * var(--heading-size-scale, 1));
+    text-align: center;
+  }
+  .car {
+    --rim-turn: -320deg;
+    margin-top: -8px;
+  }
+}
+
+.cityList,
+.staticCity {
+  display: block;
+}
+.cityList > span {
+  display: block;
+}

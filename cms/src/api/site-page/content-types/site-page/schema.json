@@ -1,0 +1,212 @@
+{
+  "kind": "collectionType",
+  "collectionName": "site_pages",
+  "info": {
+    "singularName": "site-page",
+    "pluralName": "site-pages",
+    "displayName": "Site page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "country": {
+      "type": "customField",
+      "enum": [
+        "uz",
+        "kg",
+        "am",
+        "ge",
+        "by"
+      ],
+      "required": true,
+      "customField": "global::country-select"
+    },
+    "language": {
+      "type": "customField",
+      "enum": [
+        "ru",
+        "uz",
+        "ky",
+        "hy",
+        "ka",
+        "be"
+      ],
+      "required": true,
+      "default": "ru",
+      "customField": "global::country-language"
+    },
+    "headerSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.header",
+      "required": true
+    },
+    "heroSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.hero",
+      "required": true
+    },
+    "featuresSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.features",
+      "required": true
+    },
+    "citiesSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.cities",
+      "required": true
+    },
+    "cashbackSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.cashback",
+      "required": true
+    },
+    "downloadSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.download",
+      "required": true
+    },
+    "faqSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.faq",
+      "required": true
+    },
+    "newsSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.news",
+      "required": true
+    },
+    "footerSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.footer",
+      "required": true
+    },
+    "cookieSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "page.cookie",
+      "required": true
+    },
+    "copy": {
+      "type": "component",
+      "repeatable": false,
+      "component": "site.copy",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "cities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "site.city",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "site.faq",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ],
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "heroImageRetina": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ],
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "heroLocation": {
+      "type": "string",
+      "required": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "cashbackRate": {
+      "type": "string",
+      "required": false,
+      "default": "30%",
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "sharedSettings": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::shared-setting.shared-setting"
+    },
+    "sharedBaseline": {
+      "type": "json",
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    }
+  }
+}

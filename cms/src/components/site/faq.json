@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_site_faqs",
+  "info": {
+    "displayName": "FAQ"
+  },
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "answer": {
+      "type": "text",
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    },
+    "linkHref": {
+      "type": "string",
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    },
+    "linkLabel": {
+      "type": "string",
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      }
+    },
+    "answerContent": {
+      "type": "blocks"
+    }
+  }
+}
