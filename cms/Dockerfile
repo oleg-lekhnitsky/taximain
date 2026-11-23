@@ -2,6 +2,7 @@ FROM node:22-bookworm-slim AS build
 WORKDIR /app
 ENV STRAPI_TELEMETRY_DISABLED=true
 RUN apt-get update && apt-get install -y --no-install-recommends python3 make g++ && rm -rf /var/lib/apt/lists/*
+RUN npm install --global npm@12.2.3
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .

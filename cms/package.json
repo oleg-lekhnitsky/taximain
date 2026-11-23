@@ -45,5 +45,6 @@
     "esbuild@0.28.2": true,
     "esbuild@0.25.12": true,
     "@swc/core@1.16.22": true
-  }
+  },
+  "packageManager": "npm@12.2.3"
 }
