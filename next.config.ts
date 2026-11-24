@@ -6,6 +6,7 @@ const localCms = ["localhost", "127.0.0.1", "::1", "[::1]"].includes(cmsImageOri
 const nextConfig: NextConfig = {
   output: "standalone",
   images: {
+    qualities: [75, 100],
     remotePatterns: [{
       protocol: cmsImageOrigin.protocol.slice(0, -1) as "http" | "https",
       hostname: cmsImageOrigin.hostname,

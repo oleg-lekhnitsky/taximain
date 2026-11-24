@@ -51,7 +51,7 @@ export default function Hero() {
       }
     >
       <div className={styles.backdrop}>
-        {pageReady && <Image src={content.heroImage} alt="" fill preload sizes="(max-aspect-ratio: 16/9) 178svh, (min-width: 1920px) 1920px, 100vw" style={{ objectFit: "cover", objectPosition: country.code === "kg" ? "center" : "60% center" }} />}
+        {pageReady && <Image src={country.code === "am" ? "/assets/hero/passenger_arm2 1.png" : content.heroImage} alt="" fill preload quality={100} sizes="(max-aspect-ratio: 16/9) 178svh, (min-width: 1920px) 1920px, 100vw" style={{ objectFit: "cover", objectPosition: country.code === "kg" ? "center" : "60% center" }} />}
       </div>
       <div className="hero-shell">
         <div className="hero-content">
