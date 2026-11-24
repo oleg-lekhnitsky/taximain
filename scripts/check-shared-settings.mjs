@@ -14,3 +14,8 @@ assert.equal(updated.cookieSection.message[0].children[0].text, "New cookies");
 assert.equal(original.headerSection.faqLabel, "Questions", "Original page was mutated");
 assert.equal(applySharedSettings(original), original);
 console.log("Shared settings passed: inherited updates, country overrides, rich-text equality and immutable source.");
+
+const footerPage = { footerSection: { copyright: null }, sharedBaseline: { footer: {} } };
+const footerShared = { documentId: "settings", language: "ru", footer: { copyright: "© 2027\nCompany" } };
+assert.equal(applySharedSettings(footerPage, footerShared).footerSection.copyright, footerShared.footer.copyright);
+assert.equal(applySharedSettings({ ...footerPage, footerSection: { copyright: "Local company" } }, footerShared).footerSection.copyright, "Local company");

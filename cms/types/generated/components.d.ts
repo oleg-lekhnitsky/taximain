@@ -296,6 +296,7 @@ export interface PageFooter extends Struct.ComponentSchema {
     displayName: 'Footer';
   };
   attributes: {
+    copyright: Schema.Attribute.Text;
     legalHeading: Schema.Attribute.Text & Schema.Attribute.Required;
     privacyPolicyLabel: Schema.Attribute.Text & Schema.Attribute.Required;
     serviceRulesLabel: Schema.Attribute.Text & Schema.Attribute.Required;

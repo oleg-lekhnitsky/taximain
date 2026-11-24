@@ -176,6 +176,7 @@ export function fromPageSections<T extends LegacyPage & PageSections>(
     faqs: page.faqSection!.items as T["faqs"],
     cashbackRateText: page.cashbackSection!.rateText as string | undefined,
     downloadsText: page.cashbackSection!.downloadsText as string | undefined,
+    footerCopyright: page.footerSection?.copyright as string | undefined,
     heroImage: page.heroSection!.image,
     heroImageRetina: page.heroSection!.retinaImage,
     heroLocation: "",

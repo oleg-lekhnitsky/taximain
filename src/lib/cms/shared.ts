@@ -9,7 +9,7 @@ export function applySharedSettings<T extends PageSections & { sharedBaseline?: 
   const result = structuredClone(page);
   const merge = (section: keyof PageSections, key: string, value: unknown, baseline: unknown) => {
     const target = result[section] as Record<string, unknown> | undefined;
-    if (target && value !== undefined && (target[key] === undefined || JSON.stringify(clean(target[key])) === JSON.stringify(clean(baseline)))) target[key] = value;
+    if (target && value !== undefined && (target[key] == null || JSON.stringify(clean(target[key])) === JSON.stringify(clean(baseline)))) target[key] = value;
   };
   for (const [group, section] of Object.entries(groups) as [keyof typeof groups, typeof groups[keyof typeof groups]][]) {
     for (const [key, value] of Object.entries(shared[group] ?? {})) if (key !== "id") merge(section, key, value, page.sharedBaseline[group]?.[key]);

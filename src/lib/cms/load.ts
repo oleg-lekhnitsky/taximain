@@ -33,6 +33,7 @@ type PageRecord = PageSections & {
   cashbackRate: string;
   cashbackRateText?: string;
   downloadsText?: string;
+  footerCopyright?: string;
   appDownloadButton?: string;
 };
 type StoryRecord = {
@@ -155,6 +156,7 @@ export const loadSiteContent = cache(async (): Promise<SiteContentMap> => {
       cashbackRate: page.cashbackRate,
       cashbackRateText: page.cashbackRateText,
       downloadsText: page.downloadsText,
+      footerCopyright: page.footerCopyright,
       appDownloadButton: page.appDownloadButton || page.copy.downloadButton,
       news: [],
     };

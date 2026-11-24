@@ -8,15 +8,11 @@ import { useCountry } from "@/components/CountrySwitcher/CountryProvider";
 
 export default function Footer() {
   const copy = useCopy();
-  const { sharedLinks } = useSiteContent();
+  const { sharedLinks, footerCopyright } = useSiteContent();
   const { pageCountry, pageLanguage } = useCountry();
   return (
     <footer id="foot" lang={contentLanguage(pageLanguage)}>
-      <p>
-        © 2026
-        <br />
-        ООО «Оператор ВБ Такси»
-      </p>
+      <p style={{ whiteSpace: "pre-line" }}>{footerCopyright ?? "© 2026\nООО «Оператор ВБ Такси»"}</p>
       <nav aria-label={copy.legal}>
         <TransitionLink
           href={`/tariffs?country=${pageCountry.code}&lang=${pageLanguage}`}

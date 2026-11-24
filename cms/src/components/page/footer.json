@@ -24,6 +24,9 @@
     "legalHeading": {
       "type": "text",
       "required": true
+    },
+    "copyright": {
+      "type": "text"
     }
   }
 }

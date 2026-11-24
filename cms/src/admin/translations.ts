@@ -1,4 +1,6 @@
 const labels: Record<string, string> = {
+  copyright: "Копирайт и название компании", "Copyright and company": "Копирайт и название компании",
+  "One text block. Use a new line to separate the copyright and company name.": "Один текстовый блок. Разделите копирайт и название компании переносом строки.",
   rateText: "Текст плашки кешбэка", downloadsText: "Текст о скачиваниях",
   sharedSettings: "Общие настройки", header: "Навигация", footer: "Подвал сайта", cookie: "Уведомление о cookies", accessibility: "Доступность", links: "Ссылки",
   googlePlayUrl: "Ссылка Google Play", appStoreUrl: "Ссылка App Store", userAgreementUrl: "Ссылка на пользовательское соглашение", privacyPolicyUrl: "Ссылка на политику конфиденциальности", serviceRulesUrl: "Ссылка на правила сервиса",

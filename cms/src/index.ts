@@ -17,6 +17,20 @@ export default {
   async bootstrap({ strapi }: { strapi: Core.Strapi }) {
     await bootstrapDeployment(strapi);
     const components = strapi.plugin("content-manager").service("components");
+    // Add the original copyright only where it has never been supplied.
+    // Update component rows directly to preserve separate draft/published content.
+    const settings = await strapi.db.query("api::shared-setting.shared-setting").findMany({ populate: ["footer"] });
+    for (const setting of settings) {
+      if (setting.footer && setting.footer.copyright == null) {
+        await strapi.db.query("page.footer").update({ where: { id: setting.footer.id }, data: { copyright: "© 2026\nООО «Оператор ВБ Такси»" } });
+      }
+    }
+    const footer = strapi.components["page.footer"];
+    const footerConfig = await components.findConfiguration(footer);
+    footerConfig.layouts.edit = ["copyright", "tariffsLabel", "userAgreementLabel", "privacyPolicyLabel", "serviceRulesLabel", "legalHeading"].map(name => [{ name, size: 12 }]);
+    footerConfig.metadatas.copyright.edit.label = "Copyright and company";
+    footerConfig.metadatas.copyright.edit.description = "One text block. Use a new line to separate the copyright and company name.";
+    await components.updateConfiguration(footer, footerConfig);
     const component = strapi.components["tariff.section"];
     const configuration = await components.findConfiguration(component);
     configuration.settings.mainField = "title";

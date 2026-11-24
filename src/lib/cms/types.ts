@@ -59,6 +59,7 @@ export type SiteContent = {
   copy: PageCopy;
   cookieMessage: RichBlock[];
   sharedLinks?: SharedLinks;
+  footerCopyright?: string;
   cities: readonly string[];
   faqs: FaqContent[];
   heroImage: string;
