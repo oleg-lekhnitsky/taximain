@@ -201,9 +201,13 @@ body.wb-taxi-admin:has(input[type="password"]):not(:has(nav)) {
   min-width: 100px;
 }
 
-/* Transparent white artwork reads as white on dark and black on light panels. */
-.wb-taxi-admin img[src*="wb-taxi-auth"] {
-  mix-blend-mode: difference;
+/* Explicit contrast avoids blending the logo into light auth panels. */
+.wb-taxi-admin img[data-wb-auth-logo] {
+  mix-blend-mode: normal;
+  filter: brightness(0);
+}
+.wb-taxi-admin img[data-wb-logo-theme="dark"] {
+  filter: none;
 }
 
 /* The optional Strapi marketing subscription is not part of CMS onboarding. */

@@ -24,7 +24,7 @@ export function markFieldLabels() {
     document.body.setAttribute("data-wb-auth", "");
     let card = document.querySelector('form input[type="password"]')?.closest("form")?.parentElement;
     while (card && !["MAIN", "BODY"].includes(card.tagName)) {
-      if (card.querySelector('img[src*="wb-taxi-auth"]')) {
+      if (card.querySelector('img[data-wb-auth-logo]')) {
         card.setAttribute("data-wb-auth-card", "");
         break;
       }

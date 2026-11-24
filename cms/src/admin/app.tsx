@@ -1,3 +1,4 @@
+import { markAuthLogoTheme } from "./auth-logo";
 import { markPreviewSections } from "./preview-sections";
 import { ContentChecksPanel } from "./components/ContentChecks";
 import { markContentEditor } from "./content-editor";
@@ -149,6 +150,7 @@ export default {
       scheduled = true;
       requestAnimationFrame(() => {
         scheduled = false;
+        markAuthLogoTheme();
         markSectionTitles();
         markFieldLabels();
         markLinkPresets();
@@ -157,8 +159,9 @@ export default {
         markPreviewSections();
       });
     });
-    observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["class"] });
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+    markAuthLogoTheme();
     markSectionTitles();
     markFieldLabels();
     markLinkPresets();
