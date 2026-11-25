@@ -15,20 +15,24 @@
     "cms:organize": "tsx scripts/organize-cms.mjs",
     "cms:preview:setup": "node scripts/setup-cms-preview.mjs",
     "cms:seed:shared": "node scripts/seed-shared-settings.mjs",
-    "cms:check:shared": "node --import tsx scripts/check-shared-settings.mjs"
+    "cms:check:shared": "node --import tsx scripts/check-shared-settings.mjs",
+    "tokens:generate": "node scripts/design-tokens.mjs",
+    "tokens:check": "node scripts/design-tokens.mjs --check"
   },
   "dependencies": {
     "@ui-sdk/react": "^0.1.0-beta.6",
     "next": "16.4.6",
     "qrcode": "^1.5.4",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "three": "^0.187.0"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/qrcode": "^1.5.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.187.0",
     "eslint": "^9",
     "eslint-config-next": "16.4.6",
     "railway": "^3.17.0",

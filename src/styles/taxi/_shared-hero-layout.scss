@@ -8,7 +8,7 @@
 }
 
 .hero-shell {
-  max-width: 1440px;
+  max-width: var(--size-1440);
   margin-inline: auto;
 }
 
@@ -27,23 +27,23 @@
 #sect-hero .hero-content {
   position: relative;
   width: 100%;
-  gap: 32px;
+  gap: var(--size-32);
   padding: 0;
 }
 #sect-hero .hero-copy {
-  gap: 12px;
+  gap: var(--size-12);
 }
 @media (min-width: 768px) {
   #sect-hero .hero-copy {
-    gap: 24px;
+    gap: var(--size-24);
   }
 }
 @media (min-width: 1024px) {
   #sect-hero .hero-content {
-    gap: 24px;
+    gap: var(--size-24);
   }
   #sect-hero .hero-copy {
-    gap: 32px;
+    gap: var(--size-32);
   }
 }
 /* Verbatim local-desktop-hero from the original page. */
@@ -53,13 +53,13 @@
     min-height: 100vh;
   }
   #sect-hero > div {
-    min-height: calc(100vh - 48px);
+    min-height: calc(100vh - var(--size-48));
     padding-top: 0;
   }
   #sect-hero > div > div:first-child {
     flex: 1;
     justify-content: center;
-    padding-block: 48px;
+    padding-block: var(--size-48);
   }
   #sect-hero > div > div:last-child {
     flex-shrink: 0;
@@ -71,7 +71,7 @@
 
 @media (max-width: 1023px) {
   #sect-hero > div {
-    padding-top: 80px;
+    padding-top: var(--size-80);
   }
 }
 
@@ -79,17 +79,17 @@
 
 @media (max-width: 1023px) {
   #sect-hero {
-    min-height: calc(100svh - var(--site-header-height, 52px));
+    min-height: calc(100svh - var(--site-header-height, var(--size-52)));
   }
   #sect-hero > div {
-    min-height: calc(100svh - var(--site-header-height, 52px));
+    min-height: calc(100svh - var(--site-header-height, var(--size-52)));
     padding-top: 0;
-    padding-bottom: 24px;
+    padding-bottom: var(--size-24);
   }
   #sect-hero > div > div:first-child {
     flex: 1;
     justify-content: center;
-    padding-top: clamp(32px, 6svh, 80px);
+    padding-top: clamp(var(--size-32), 6svh, var(--size-80));
     padding-bottom: 0;
   }
   #sect-hero > div > div:last-child {
@@ -122,14 +122,14 @@
 }
 @media (min-width: 600px) and (max-width: 1023px) {
   #sect-hero .hero-content {
-    gap: 16px;
+    gap: var(--size-16);
   }
 }
 @media (max-width: 599px) {
   #sect-hero .hero-content {
-    gap: 16px;
+    gap: var(--size-16);
   }
   #sect-hero .hero-copy {
-    gap: 16px;
+    gap: var(--size-16);
   }
 }

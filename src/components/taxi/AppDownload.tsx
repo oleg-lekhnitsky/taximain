@@ -17,7 +17,7 @@ const getServerPlatform = () => null;
 
 export default function AppDownload() {
   const copy = useCopy();
-  const { appDownloadButton, sharedLinks } = useSiteContent();
+  const { appDownloadButton, sharedLinks, downloadsText } = useSiteContent();
   const { country, language } = useCountry();
   const store = useSyncExternalStore(
     subscribeToPlatform,
@@ -26,9 +26,7 @@ export default function AppDownload() {
   );
   const storeButtons = (
     <div className={styles.stores}>
-      <a
-        href={safeHref(sharedLinks?.googlePlayUrl || appStores.googlePlay)}
-        aria-label={copy.play}
+      <span
         data-platform-hidden={store === appStores.appStore}
       >
         <Image
@@ -37,10 +35,8 @@ export default function AppDownload() {
           width={119.906}
           height={37.4614}
         />
-      </a>
-      <a
-        href={safeHref(sharedLinks?.appStoreUrl || appStores.appStore)}
-        aria-label={copy.appStore}
+      </span>
+      <span
         data-platform-hidden={store === appStores.googlePlay}
       >
         <Image
@@ -49,7 +45,7 @@ export default function AppDownload() {
           width={112.737}
           height={37.4614}
         />
-      </a>
+      </span>
     </div>
   );
   return (
@@ -99,8 +95,13 @@ export default function AppDownload() {
             </div>
           </div>
           <div className={styles.footer}>
-            <div data-banner-reveal>{storeButtons}</div>
-            <p className={styles.hint} data-banner-reveal>
+          <div className={styles.downloads}>
+            <p>
+              {downloadsText ?? <>{copy.downloads[0]}<br />{copy.downloads[1]}</>}
+            </p>
+          </div>
+            <div className={styles.storePosition} data-banner-reveal>{storeButtons}</div>
+            <p className={styles.hint} lang={language} data-banner-reveal>
               {copy.scan}
             </p>
           </div>

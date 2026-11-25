@@ -5,11 +5,12 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useSiteContent } from "@/components/CountrySwitcher/ContentProvider";
 import FlowHeading from "./FlowHeading";
+import MelonModel from "./MelonModel";
 import styles from "./Cashback.module.scss";
 
 export default function Cashback() {
   const copy = useCopy();
-  const { cashbackRate, cashbackRateText, downloadsText } = useSiteContent();
+  const { cashbackRate, cashbackRateText } = useSiteContent();
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -94,6 +95,8 @@ export default function Cashback() {
             sizes="(max-width: 767px) 360px, 550px"
           />
         </div>
+        <MelonModel className={styles.melon} />
+        <MelonModel className={`${styles.melon} ${styles.foregroundMelon}`} foreground />
         <div className={styles.intro}>
           <FlowHeading
             id="cashback-title"
@@ -107,19 +110,6 @@ export default function Cashback() {
         </div>
         <div className={styles.footer}>
           <p className={styles.terms}>{copy.cashbackTerms}</p>
-          <div className={styles.downloads}>
-            <span className={styles.icon}>
-              <Image
-                src="/assets/cashback/download.svg"
-                alt=""
-                width={24}
-                height={24}
-              />
-            </span>
-            <p>
-              {downloadsText ?? <>{copy.downloads[0]}<br />{copy.downloads[1]}</>}
-            </p>
-          </div>
         </div>
       </div>
     </section>

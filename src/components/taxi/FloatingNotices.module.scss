@@ -1,20 +1,20 @@
 .stack {
   position: fixed;
   z-index: 1000;
-  right: max(20px, calc((100vw - var(--site-max-width, 1440px)) / 2 + 20px));
-  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  right: max(var(--size-20), calc((100vw - var(--site-max-width, var(--size-1440))) / 2 + var(--size-20)));
+  bottom: calc(var(--size-24) + env(safe-area-inset-bottom, 0px));
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   justify-content: flex-end;
-  gap: 8px;
+  gap: var(--size-8);
   width: 412px;
-  max-width: calc(100vw - 32px);
+  max-width: calc(100vw - var(--size-32));
 
   :global(.compensation-cookies) {
     position: static;
     flex: 1;
-    width: 300px;
+    width: var(--size-300);
     max-width: none;
     margin: 0;
   }
@@ -22,34 +22,33 @@
 
 @media (min-width: 1024px) {
   .stack :global(.compensation-cookies) {
-    min-height: 104px;
+    min-height: var(--size-104);
   }
 }
 
 .download {
-  --download-surface: #f6f6f9;
 
   display: flex;
   order: 1;
   align-self: flex-end;
-  color: #111;
+  color: var(--color-ink);
   text-decoration: none;
   transform-origin: bottom right;
   transition:
-    opacity 280ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 360ms cubic-bezier(0.16, 1.2, 0.3, 1),
+    opacity var(--duration-280) cubic-bezier(0.22, 1, 0.36, 1),
+    transform var(--duration-360) cubic-bezier(0.16, 1.2, 0.3, 1),
     visibility 0s,
-    scale 150ms ease-out;
+    scale var(--duration-150) ease-out;
 
   &[data-visible="false"] {
     opacity: 0;
-    transform: translateY(12px) scale(0.75);
+    transform: translateY(var(--size-12)) scale(0.75);
     visibility: hidden;
     pointer-events: none;
     transition-timing-function:
       cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1), ease,
       ease-out;
-    transition-delay: 0s, 0s, 280ms, 0s;
+    transition-delay: 0s, 0s, var(--duration-280), 0s;
   }
 
   &[data-visible="true"] {
@@ -63,9 +62,9 @@
   }
 
   &:focus-visible {
-    outline: 2px solid #a73afd;
-    outline-offset: 3px;
-    border-radius: 24px;
+    outline: var(--size-2) solid var(--color-link);
+    outline-offset: var(--size-3);
+    border-radius: var(--size-24);
   }
 }
 
@@ -74,14 +73,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 104px;
-  padding: 12px;
-  border: 1px solid #fff;
-  border-radius: 24px;
-  background: var(--download-surface);
+  width: var(--size-104);
+  padding: var(--size-12);
+  border: var(--size-1) solid var(--color-white);
+  border-radius: var(--size-24);
+  background: var(--color-surface);
   box-shadow:
-    0 4px 12px #0000000d,
-    0 16px 40px #00000003;
+    0 var(--size-4) var(--size-12) var(--color-0000000d),
+    0 var(--size-16) var(--size-40) var(--color-00000003);
   aspect-ratio: 1;
   transform-origin: center 75%;
 }
@@ -145,12 +144,12 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 17px;
-  height: 17px;
+  width: var(--size-17);
+  height: var(--size-17);
   margin: -8.5px;
   transform-origin: center;
-  border-radius: 6px;
-  background: conic-gradient(#661aff 25%, #f0f 0 50%, #661aff 0 75%, #f0f 0);
+  border-radius: var(--size-6);
+  background: conic-gradient(var(--color-violet) 25%, var(--color-pink) 0 50%, var(--color-violet) 0 75%, var(--color-pink) 0);
 }
 
 @media (max-width: 1023px) {
@@ -158,20 +157,20 @@
     display: none;
   }
   .stack {
-    width: 300px;
-    right: 20px;
-    bottom: calc(24px + env(safe-area-inset-bottom, 0px));
-    max-width: calc(100vw - 40px);
+    width: var(--size-300);
+    right: var(--size-20);
+    bottom: calc(var(--size-24) + env(safe-area-inset-bottom, 0px));
+    max-width: calc(100vw - var(--size-40));
   }
 }
 
 @media (max-width: 767px) {
   .stack {
-    right: 12px;
-    left: 12px;
-    bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+    right: var(--size-12);
+    left: var(--size-12);
+    bottom: calc(var(--size-24) + env(safe-area-inset-bottom, 0px));
     margin-inline: auto;
-    max-width: calc(100vw - 24px);
+    max-width: calc(100vw - var(--size-24));
   }
 }
 

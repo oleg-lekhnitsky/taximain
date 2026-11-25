@@ -1,11 +1,12 @@
+import designTokens from "../../../../cms/src/admin/design-tokens.json";
 import { publicSiteOrigin } from "@/lib/site-origin";
 import QRCode from "qrcode";
 
 export function GET(request: Request) {
   const background =
     new URL(request.url).searchParams.get("surface") === "soft"
-      ? "#f6f6f9"
-      : "#ffffff";
+      ? designTokens["color-surface"]
+      : designTokens["color-white"];
   const source = new URL(request.url);
   const target = new URL("/download", publicSiteOrigin(request.url));
   for (const key of ["country", "lang"]) {
@@ -51,7 +52,7 @@ export function GET(request: Request) {
     )
     .join("");
   // The surrounding card supplies the quiet zone; match its surface color.
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="202" height="202" viewBox="0 0 ${size} ${size}"><rect width="${size}" height="${size}" fill="${background}"/><g fill="#ff00ff">${cells.join("")}${corners}</g></svg>`;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="202" height="202" viewBox="0 0 ${size} ${size}"><rect width="${size}" height="${size}" fill="${background}"/><g fill="${designTokens["color-pink"]}">${cells.join("")}${corners}</g></svg>`;
   return new Response(svg, {
     headers: {
       "Content-Type": "image/svg+xml",

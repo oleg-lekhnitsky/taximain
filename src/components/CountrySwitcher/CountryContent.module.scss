@@ -17,14 +17,14 @@
 
   &[data-transition="enter"] {
     animation:
-      country-enter-opacity 490ms var(--page-ease),
-      country-enter-move 460ms var(--page-ease);
+      country-enter-opacity var(--duration-490) var(--page-ease),
+      country-enter-move var(--duration-460) var(--page-ease);
   }
 
   &[data-transition="exit"] {
     animation:
-      country-exit-opacity 490ms var(--page-ease) both,
-      country-exit-move 460ms var(--page-ease) both;
+      country-exit-opacity var(--duration-490) var(--page-ease) both,
+      country-exit-move var(--duration-460) var(--page-ease) both;
     pointer-events: none;
   }
 }
@@ -58,12 +58,12 @@
   }
 }
 
-// These country versions use Google Sans for content, with bold display text.
+/* These country versions use Google Sans for content, with bold display text. */
 :global(#body).content:is([lang="hy"], [lang="ka"]) {
   :global(button),
   :global(button *),
   :global([data-download-cta]) {
-    font-weight: 700;
+    font-weight: var(--weight-700);
   }
 }
 
@@ -85,7 +85,7 @@
   :global(.faq-question *),
   :global(strong),
   :global(b) {
-    font-weight: 700;
+    font-weight: var(--weight-700);
   }
 }
 
@@ -103,7 +103,7 @@
     transform: translateY(0);
   }
   to {
-    transform: translateY(40px);
+    transform: translateY(var(--size-40));
   }
 }
 
@@ -118,7 +118,7 @@
 
 @keyframes country-enter-move {
   from {
-    transform: translateY(30px);
+    transform: translateY(var(--size-30));
   }
   to {
     transform: translateY(0);

@@ -11,34 +11,34 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
-  gap: 24px;
+  gap: var(--size-24);
 }
 
 .label {
   margin: 0;
-  padding-top: 4px;
+  padding-top: var(--size-4);
   font-family: "WB Sans", sans-serif;
-  font-size: 24px;
-  font-weight: 500;
+  font-size: var(--size-24);
+  font-weight: var(--weight-500);
   line-height: 1;
   letter-spacing: -0.02em;
   text-align: left;
 }
 
 :global(#body:is([lang="hy"], [lang="ka"])) .label {
-  font-weight: 700;
+  font-weight: var(--weight-700);
 }
 
 .cities {
   margin: 0;
   font-family: "WB Sans", sans-serif;
-  font-size: calc(clamp(64px, 6.667vw, 96px) * var(--heading-size-scale, 1));
-  font-weight: 500;
+  font-size: calc(clamp(var(--size-64), 6.667vw, var(--size-96)) * var(--heading-size-scale, 1));
+  font-weight: var(--weight-500);
   line-height: 0.9;
   letter-spacing: -0.02em;
   text-align: left;
 
-  color: #f0f;
+  color: var(--color-pink);
 }
 
 .wheel {
@@ -49,7 +49,7 @@
   height: 3.4em;
   margin-top: -0.15em;
   overflow: hidden;
-  mask-image: linear-gradient(transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(transparent, var(--color-black) 8%, var(--color-black) 92%, transparent);
 }
 
 .drum {
@@ -136,7 +136,7 @@
   height: auto;
   max-width: none;
   margin-inline: 0;
-  margin-top: -56px;
+  margin-top: calc(-1 * var(--size-56));
   transform: translateX(-50%);
 }
 
@@ -153,7 +153,7 @@
   aspect-ratio: 1;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: #151515;
+  background: var(--color-151515);
 }
 
 .rearWheel {
@@ -172,14 +172,14 @@
 @media (prefers-reduced-motion: no-preference) {
   .car:global(.card-reveal-ready):not(:global(.card-revealed)) {
     opacity: 0;
-    transform: translateX(calc(-50% - 160px));
+    transform: translateX(calc(-50% - var(--size-160)));
   }
 
   .car:global(.card-reveal-ready):global(.card-revealed) {
-    animation: car-enter 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: car-enter var(--duration-900) cubic-bezier(0.22, 1, 0.36, 1) both;
   }
   .car:global(.card-reveal-ready):global(.card-revealed) .rim {
-    animation: rim-roll 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: rim-roll var(--duration-900) cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 }
 
@@ -195,7 +195,7 @@
 @keyframes car-enter {
   from {
     opacity: 0;
-    transform: translateX(calc(-50% - 160px));
+    transform: translateX(calc(-50% - var(--size-160)));
   }
   to {
     opacity: 1;
@@ -210,19 +210,19 @@
 
   .heading {
     grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
+    gap: var(--size-24);
   }
   .label {
-    font-size: 16px;
+    font-size: var(--size-16);
     text-align: center;
   }
   :global(#body) .cities {
-    font-size: calc(clamp(48px, 15vw, 64px) * var(--heading-size-scale, 1));
+    font-size: calc(clamp(var(--size-48), 15vw, var(--size-64)) * var(--heading-size-scale, 1));
     text-align: center;
   }
   .car {
     --rim-turn: -320deg;
-    margin-top: -8px;
+    margin-top: calc(-1 * var(--size-8));
   }
 }
 

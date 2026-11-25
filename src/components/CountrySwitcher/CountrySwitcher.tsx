@@ -46,7 +46,7 @@ function CountryFlag({ code }: { code: CountryCode }) {
 export default function CountrySwitcher() {
   const copy = useCopy();
   const { country, language, selectCountry, selectLanguage } = useCountry();
-  const [view, setView] = useState<"country" | "language">("country");
+  const [view, setView] = useState<"country" | "language">("language");
   return (
     <Popover>
       <PopoverTrigger
@@ -84,11 +84,11 @@ export default function CountrySwitcher() {
           }}
         >
           <SegmentedControlIndicator className={styles.segmentIndicator} />
-          <SegmentedControlItem className={styles.segment} value="country">
-            {copy.picker[0]}
-          </SegmentedControlItem>
           <SegmentedControlItem className={styles.segment} value="language">
             {copy.picker[1]}
+          </SegmentedControlItem>
+          <SegmentedControlItem className={styles.segment} value="country">
+            {copy.picker[0]}
           </SegmentedControlItem>
         </SegmentedControl>
         {view === "country" ? (

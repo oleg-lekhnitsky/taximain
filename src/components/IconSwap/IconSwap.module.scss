@@ -11,12 +11,12 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  filter: blur(2px);
+  filter: blur(var(--size-2));
   transform: scale(0.25);
   transition:
-    opacity 250ms var(--ease),
-    filter 250ms var(--ease),
-    transform 250ms var(--ease);
+    opacity var(--duration-250) var(--ease),
+    filter var(--duration-250) var(--ease),
+    transform var(--duration-250) var(--ease);
 
   svg {
     display: block;

@@ -2,40 +2,12 @@
 @layer tokens {
   :host,
   :root {
-    --color-black: #000;
-    --color-white: #fff;
-    --spacing: 4px;
-    --text-base: 16px;
     --text-base--line-height: 1.2;
-    --text-xl: 20px;
-    --text-xl--line-height: 24px;
-    --text-3xl: 32px;
-    --text-3xl--line-height: 28px;
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-bold: 700;
     --tracking-tight: -0.025em;
     --tracking-normal: 0em;
-    --radius-3xl: 24px;
-    --radius-4xl: 40px;
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --default-transition-duration: 0.15s;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    --color-brand-pink: #f0f;
-    --color-brand-magenta: #b0f;
-    --color-brand-black: #000;
-    --color-brand-white: #fff;
-    --color-brand-ink: #111;
-    --color-brand-muted: #656565;
-    --color-brand-subtle: #8f8fa3;
-    --color-brand-link: #a73afd;
-    --color-brand-surface-pink: #ffe1ff;
-    --color-brand-surface-peach: #ffebd9;
-    --color-brand-surface-gray: #f6f6f9;
-    --color-brand-surface-nav: #ededf3;
-    --color-brand-control: #ffd6fd;
-    --color-brand-control-active: #f2c;
-    --color-brand-white-72: #ffffffb8;
     --font-brand: "WB Sans", sans-serif;
     --font-brand-body: "ALS Hauss", sans-serif;
     --font-google: "Google Sans", "ALS Hauss", sans-serif;
@@ -67,124 +39,54 @@
     --starColr: 252 169 93;
     --suxsColr: 0 190 55;
     color-scheme: dark;
-    --baseFS: 18px;
-    --baseLH: 24px;
-    --baseGap: 4px;
-    --h1FS: 64px;
-    --h1LH: 72px;
-    --h2FS: 48px;
-    --h2LH: 56px;
-    --h3FS: 36px;
-    --h3LH: 48px;
-    --h4FS: 24px;
-    --h4LH: 32px;
-    --h5FS: 18px;
-    --h5LH: 28px;
-    --pFS: var(--baseFS);
-    --pLH: var(--baseLH);
-    --pIntroFS: 24px;
-    --pIntroLH: 36px;
-    --pSmallFS: 16px;
-    --pSmallLH: 22px;
-    --rateFS: 14px;
-    --rateLH: 20px;
-    --navSepFS: 12px;
-    --navSepLH: 16px;
-    --controlFS: 16px;
-    --inputFS: 18px;
-    --inputLH: 24px;
-    --inputTitleFS: 12px;
-    --inputTitleLH: 16px;
-    --paramsFS: 14px;
-    --descFS: 16px;
-    --descLH: 20px;
-    --measureFS: 14px;
-    --measureLH: 16px;
-    --iconDim: 24px;
-    --iconSDim: 16px;
-    --iconMDim: 32px;
-    --iconLDim: 48px;
-    --iconGDim: 64px;
-    --scrollDim: 8px;
-    --bulletDim: 8px;
-    --packageImgDim: 72px;
-    --accentDim: 480px;
-    --sendPicDim: 180px;
-    --takePicDim: 180px;
+    --baseFS: var(--size-18);
+    --baseLH: var(--size-24);
+    --h1FS: var(--size-64);
+    --h1LH: var(--size-72);
+    --h2FS: var(--size-48);
+    --h2LH: var(--size-56);
+    --h3FS: var(--size-36);
+    --h3LH: var(--size-48);
+    --h4FS: var(--size-24);
+    --h4LH: var(--size-32);
+    --pIntroFS: var(--size-24);
+    --pIntroLH: var(--size-36);
+    --pSmallLH: var(--size-22);
+    --accentDim: var(--size-480);
+    --sendPicDim: var(--size-180);
+    --takePicDim: var(--size-180);
     --advaPicDim: 92px;
-    --loadImgDim: 160px;
-    --mapMarkerDim: 44px;
     --mapSideW: 420px;
-    --inputBoxW: 360px;
+    --inputBoxW: var(--size-360);
     --gridCell4W: 361px;
-    --butnMinW: 240px;
-    --appMinW: 180px;
-    --inputDropMinW: 300px;
-    --rateMinW: 64px;
     --formMaxW: 640px;
-    --loadLogoMaxW: 240px;
-    --qrMaxW: 180px;
-    --headH: 80px;
+    --headH: var(--size-80);
     --logoMainH: 60px;
-    --logoWBH: 24px;
-    --mapH: 480px;
-    --mapSideMinH: 320px;
+    --mapH: var(--size-480);
     --dropMenuMaxH: 334px;
-    --dropMenuMapMaxH: 240px;
     --dropPackMaxH: 402px;
-    --sectGap: 56px;
-    --wrapGap: 64px;
-    --gridGap: 24px;
-    --headGap: 32px;
-    --pGap: 16px;
-    --listGap: 12px;
-    --pIntroGap: 18px;
-    --pSmallGap: 12px;
-    --butnGap: 8px;
-    --inputDropGap: 8px;
-    --dropMenuGap: 2px;
-    --packageGap: 12px;
-    --innerGap: 4px;
-    --loadGap: 24px;
-    --bannerPad: 16px;
-    --platePad: 36px;
-    --boxPad: 32px;
-    --mapPad: 24px;
-    --footPad: 16px;
-    --pointPad: 12px;
-    --inputPadTop: 18px;
-    --inputPadBtm: 6px;
-    --inputPadBlock: 12px;
-    --inputPadInline: 16px;
-    --controlPadBlock: 8px;
-    --controlPadInline: 24px;
-    --faqPad: 36px;
-    --mapMarkerPad: 2px;
-    --scrollR: 2px;
-    --menuItemR: 8px;
-    --inputR: 12px;
-    --dropMenuR: 16px;
-    --plateR: 32px;
-    --boxR: 24px;
-    --wayIconDim: 40px;
-    --summCardPad: 24px;
+    --sectGap: var(--size-56);
+    --wrapGap: var(--size-64);
+    --gridGap: var(--size-24);
+    --headGap: var(--size-32);
+    --loadGap: var(--size-24);
+    --bannerPad: var(--size-16);
+    --platePad: var(--size-36);
+    --boxPad: var(--size-32);
+    --mapPad: var(--size-24);
+    --footPad: var(--size-16);
+    --faqPad: var(--size-36);
+    --plateR: var(--size-32);
+    --boxR: var(--size-24);
     --loadZ: 999;
     --mapZ: 100;
     --headZ: 99;
     --dropZ: 9;
-    --borderW: 2px;
     --center: 1600px;
     --screen-naked: calc(100vw - var(--scrollbar-width));
     --screen-edge-margin: calc(
       (var(--screen-naked) - var(--wrapGap) - var(--center)) / -2
     );
-    --summValFS: 20px;
-    --summValLH: 24px;
-    --datatableTitleFS: 14px;
-    --datatableGap: 24px;
-    --datatableTitleLH: 20px;
-    --wayDescFS: 16px;
-    --wayGap: 32px;
     --bannerPhoneHeight: 384px;
     --bannerPhoneOffset: -115px;
     --bannerQrWidth: 162px;
@@ -192,72 +94,69 @@
   }
   @media (max-width: 980px) {
     :root {
-      --h1FS: 48px;
-      --h1LH: 56px;
-      --h2FS: 40px;
-      --h2LH: 52px;
-      --h3FS: 32px;
-      --h3LH: 44px;
-      --h4FS: 24px;
-      --h4LH: 32px;
-      --h5FS: 18px;
-      --h5LH: 28px;
-      --pIntroFS: 20px;
-      --pIntroLH: 28px;
-      --sectGap: 48px;
-      --wrapGap: 32px;
-      --gridGap: 16px;
-      --footPad: 24px;
-      --platePad: 24px;
-      --boxPad: 20px;
-      --mapPad: 16px;
-      --faqPad: 20px;
-      --plateR: 24px;
-      --boxR: 16px;
+      --h1FS: var(--size-48);
+      --h1LH: var(--size-56);
+      --h2FS: var(--size-40);
+      --h2LH: var(--size-52);
+      --h3FS: var(--size-32);
+      --h3LH: var(--size-44);
+      --h4FS: var(--size-24);
+      --h4LH: var(--size-32);
+      --pIntroFS: var(--size-20);
+      --pIntroLH: var(--size-28);
+      --sectGap: var(--size-48);
+      --wrapGap: var(--size-32);
+      --gridGap: var(--size-16);
+      --footPad: var(--size-24);
+      --platePad: var(--size-24);
+      --boxPad: var(--size-20);
+      --mapPad: var(--size-16);
+      --faqPad: var(--size-20);
+      --plateR: var(--size-24);
+      --boxR: var(--size-16);
       --mapSideW: 100%;
-      --inputBoxW: 320px;
-      --headH: 64px;
+      --inputBoxW: var(--size-320);
+      --headH: var(--size-64);
       --logoMainH: 55px;
-      --mapH: 320px;
-      --takePicDim: 160px;
+      --mapH: var(--size-320);
+      --takePicDim: var(--size-160);
     }
   }
   @media (max-width: 768px) {
     :root {
-      --loadBoxH: 120px;
-      --sendPicDim: 120px;
-      --mapH: 240px;
+      --sendPicDim: var(--size-120);
+      --mapH: var(--size-240);
     }
   }
   @media (max-width: 560px) {
     :root {
-      --baseFS: 16px;
-      --baseLH: 22px;
-      --h1FS: 30px;
+      --baseFS: var(--size-16);
+      --baseLH: var(--size-22);
+      --h1FS: var(--size-30);
       --h1LH: 38px;
-      --h2FS: 28px;
-      --h2LH: 36px;
-      --h3FS: 24px;
-      --h3LH: 32px;
-      --h4FS: 20px;
-      --h4LH: 28px;
-      --sectGap: 24px;
-      --wrapGap: 16px;
-      --gridGap: 12px;
-      --headGap: 24px;
-      --loadGap: 18px;
-      --bannerPad: 24px;
-      --footPad: 32px;
-      --platePad: 20px;
-      --boxPad: 18px;
-      --faqPad: 18px;
-      --takePicDim: 120px;
+      --h2FS: var(--size-28);
+      --h2LH: var(--size-36);
+      --h3FS: var(--size-24);
+      --h3LH: var(--size-32);
+      --h4FS: var(--size-20);
+      --h4LH: var(--size-28);
+      --sectGap: var(--size-24);
+      --wrapGap: var(--size-16);
+      --gridGap: var(--size-12);
+      --headGap: var(--size-24);
+      --loadGap: var(--size-18);
+      --bannerPad: var(--size-24);
+      --footPad: var(--size-32);
+      --platePad: var(--size-20);
+      --boxPad: var(--size-18);
+      --faqPad: var(--size-18);
+      --takePicDim: var(--size-120);
       --mapH: 350px;
     }
   }
   @media (max-width: 390px) {
     :root {
-      --bannerPad: 24px;
+      --bannerPad: var(--size-24);
     }
   }
   @-ms-viewport {
@@ -408,7 +307,7 @@
       ALS Hauss,
       sans-serif;
     font-style: normal;
-    font-weight: 500;
+    font-weight: var(--weight-500);
     font-size: var(--baseFS);
     color: rgb(var(--mainCase));
     background-color: rgb(var(--mainBase));
@@ -429,15 +328,15 @@
     box-sizing: border-box;
   }
   ::-webkit-scrollbar-track {
-    background-color: #0000;
+    background-color: var(--color-00000000);
   }
   ::-webkit-scrollbar {
-    width: var(--scrollDim);
-    height: var(--scrollDim);
-    padding: 2px;
+    width: var(--size-8);
+    height: var(--size-8);
+    padding: var(--size-2);
   }
   ::-webkit-scrollbar-thumb {
-    border-radius: var(--scrollR);
+    border-radius: var(--size-2);
     background-color: rgb(var(--corpCol1) / 64%);
   }
   ::-webkit-scrollbar-thumb:hover {
@@ -460,7 +359,7 @@
   }
   b,
   strong {
-    font-weight: 700 !important;
+    font-weight: var(--weight-700) !important;
   }
   .align {
     --alignText: left;
@@ -520,19 +419,19 @@
     line-height: var(--h4LH);
   }
   h5 {
-    font-size: var(--h5FS);
-    line-height: var(--h5LH);
+    font-size: var(--size-18);
+    line-height: var(--size-28);
   }
   p {
-    font-size: var(--pFS);
-    line-height: var(--pLH);
+    font-size: var(--baseFS);
+    line-height: var(--baseLH);
     margin: 0;
-    margin-bottom: var(--pGap);
+    margin-bottom: var(--size-16);
   }
   p.intro {
     font-size: var(--pIntroFS);
     line-height: var(--pIntroLH);
-    margin-bottom: var(--pIntroGap);
+    margin-bottom: var(--size-18);
   }
   p:last-child {
     margin-bottom: 0 !important;
@@ -540,7 +439,7 @@
   ol,
   ul {
     align-items: flex-start;
-    gap: var(--listGap);
+    gap: var(--size-12);
     padding-block: var(--gridGap);
     padding-left: var(--gridGap);
     flex-direction: column;
@@ -555,16 +454,16 @@
     padding-bottom: 0;
   }
   ul li {
-    padding-left: calc(var(--bulletDim) + var(--listGap) + var(--innerGap));
+    padding-left: calc(var(--size-8) + var(--size-12) + var(--size-4));
     line-height: 1.25;
     display: block;
     position: relative;
   }
   ul li:before {
     content: "";
-    width: var(--bulletDim);
-    height: var(--bulletDim);
-    top: calc((var(--baseLH) - var(--bulletDim)) / 2 - 1px);
+    width: var(--size-8);
+    height: var(--size-8);
+    top: calc((var(--baseLH) - var(--size-8)) / 2 - var(--size-1));
     background-color: rgb(var(--corpCol1));
     border-radius: 50%;
     display: block;
@@ -576,7 +475,7 @@
   }
   ol li {
     align-items: baseline;
-    gap: var(--listGap);
+    gap: var(--size-12);
     counter-increment: ol-counter;
     display: flex;
   }
@@ -586,8 +485,8 @@
   }
   ol li:before {
     content: counter(ol-counter) ".";
-    font-size: var(--pFS);
-    line-height: var(--pLH);
+    font-size: var(--baseFS);
+    line-height: var(--baseLH);
     flex: none;
   }
   .text {
@@ -602,12 +501,10 @@
     margin: auto;
   }
   .pad {
-    --padding: var(--wrapGap);
-    padding: var(--padding);
+    padding: var(--wrapGap);
   }
   .g {
-    --gap: var(--gridGap);
-    gap: var(--gap);
+    gap: var(--gridGap);
   }
   .b {
     --flex: 0 0 auto;
@@ -658,7 +555,7 @@
     --loadHideDur: 1s;
     z-index: var(--loadZ);
     padding: var(--wrapGap);
-    perspective: 1000px;
+    perspective: var(--size-1000);
     background-color: rgb(var(--corpCol1));
     animation: hideLoad var(--loadHideDur) ease forwards;
     animation-delay: calc(var(--logoAnimationDur) + var(--loadHideLag));
@@ -720,20 +617,20 @@
     text-decoration: none;
   }
   .button {
-    border-radius: var(--inputR);
-    padding: calc(var(--inputPadBlock) + var(--borderW))
-      calc(var(--inputPadInline) + var(--borderW));
+    border-radius: var(--size-12);
+    padding: calc(var(--size-12) + var(--size-2))
+      calc(var(--size-16) + var(--size-2));
     justify-content: center;
     align-items: center;
-    gap: var(--butnGap);
+    gap: var(--size-8);
     max-width: 100%;
     font-family:
       ALS Hauss,
       sans-serif;
     font-style: normal;
-    font-weight: 600;
+    font-weight: var(--weight-600);
     font-size: var(--baseFS);
-    line-height: var(--iconDim);
+    line-height: var(--size-24);
     cursor: pointer;
     background-color: rgb(var(--corpCol2));
     color: rgb(var(--white));
@@ -768,18 +665,18 @@
     position: relative;
   }
   .input input {
-    border-radius: var(--inputR);
+    border-radius: var(--size-12);
     width: 100%;
     font-family:
       ALS Hauss,
       sans-serif;
     font-style: normal;
-    font-weight: 500;
-    font-size: var(--inputFS);
-    line-height: var(--inputLH);
-    padding: var(--inputPadTop) var(--inputPadInline) var(--inputPadBtm);
+    font-weight: var(--weight-500);
+    font-size: var(--size-18);
+    line-height: var(--size-24);
+    padding: var(--size-18) var(--size-16) var(--size-6);
     background-color: rgb(var(--mainBasC));
-    border: var(--borderW) solid rgb(var(--mainBasC));
+    border: var(--size-2) solid rgb(var(--mainBasC));
     color: rgb(var(--mainCasC));
     transition:
       color 0.25s,
@@ -790,9 +687,9 @@
     border-color: rgb(var(--linkColr));
   }
   .input input:not(:placeholder-shown) ~ .input__title {
-    font-size: var(--inputTitleFS);
-    line-height: var(--inputTitleLH);
-    transform: translateY(calc(var(--inputPadBtm) / 2 + var(--borderW)));
+    font-size: var(--size-12);
+    line-height: var(--size-16);
+    transform: translateY(calc(var(--size-6) / 2 + var(--size-2)));
   }
   .input input:not(:placeholder-shown) ~ .input__clear,
   .input input:not(:placeholder-shown) ~ .input__placeholder {
@@ -813,8 +710,8 @@
     display: flex;
   }
   .icon {
-    width: var(--iconDim);
-    height: var(--iconDim);
+    width: var(--size-24);
+    height: var(--size-24);
     flex: none;
     display: block;
   }
@@ -836,23 +733,23 @@
     height: 100%;
   }
   .control {
-    border-radius: var(--inputR);
-    padding: var(--controlPadBlock) var(--butnGap);
+    border-radius: var(--size-12);
+    padding: var(--size-8) var(--size-8);
     justify-content: center;
     align-items: center;
-    gap: var(--butnGap);
+    gap: var(--size-8);
     max-width: 100%;
     font-family:
       ALS Hauss,
       sans-serif;
     font-style: normal;
-    font-weight: 600;
-    font-size: var(--controlFS);
-    line-height: var(--iconDim);
+    font-weight: var(--weight-600);
+    font-size: var(--size-16);
+    line-height: var(--size-24);
     cursor: pointer;
     color: rgb(var(--black));
     background-color: rgb(var(--white));
-    box-shadow: 0 0 24px 0 rgb(var(--black) / 24%);
+    box-shadow: 0 0 var(--size-24) 0 rgb(var(--black) / 24%);
     flex: none;
     text-decoration: none;
     transition:
@@ -884,7 +781,7 @@
     cursor: not-allowed;
   }
   .faqs {
-    gap: calc(var(--baseGap) * 6);
+    gap: calc(var(--size-4) * 6);
   }
   .faq,
   .faqs {
@@ -892,17 +789,15 @@
     display: flex;
   }
   .faq {
-    --faqFS: var(--h4FS);
-    --faqLH: var(--h4LH);
     border-radius: var(--boxR);
     background-color: rgb(var(--tripBase));
   }
   .nav {
     color: rgb(var(--tripCase));
-    font-size: var(--pSmallFS);
+    font-size: var(--size-16);
     line-height: var(--pSmallLH);
     align-items: center;
-    gap: var(--listGap);
+    gap: var(--size-12);
     text-decoration: none;
     transition: color 0.15s;
     display: flex;
@@ -924,7 +819,7 @@
     opacity: 0;
   }
   .send {
-    gap: var(--listGap);
+    gap: var(--size-12);
     flex-direction: column;
     display: flex;
   }
@@ -940,9 +835,9 @@
   }
   .measure {
     aspect-ratio: 9/12;
-    width: 180px;
-    padding-top: calc(var(--measureLH) + var(--baseGap) * 2);
-    padding-left: calc(var(--measureLH) + var(--baseGap) * 2);
+    width: var(--size-180);
+    padding-top: calc(var(--size-16) + var(--size-4) * 2);
+    padding-left: calc(var(--size-16) + var(--size-4) * 2);
     position: relative;
   }
   .load {
@@ -963,8 +858,8 @@
     inset: 0;
   }
   .load .pic {
-    width: var(--loadImgDim);
-    height: var(--loadImgDim);
+    width: var(--size-160);
+    height: var(--size-160);
   }
   .load .pic img {
     transform-origin: bottom;
@@ -998,19 +893,19 @@
     background-color: rgb(var(--black) / 48%);
   }
   .app {
-    border-radius: var(--inputR);
-    padding: var(--inputPadBlock) var(--inputPadInline);
+    border-radius: var(--size-12);
+    padding: var(--size-12) var(--size-16);
     align-items: center;
-    gap: var(--butnGap);
-    min-width: var(--appMinW);
+    gap: var(--size-8);
+    min-width: var(--size-180);
     max-width: 100%;
     font-family:
       ALS Hauss,
       sans-serif;
     font-style: normal;
-    font-weight: 600;
+    font-weight: var(--weight-600);
     font-size: var(--baseFS);
-    line-height: var(--iconDim);
+    line-height: var(--size-24);
     cursor: pointer;
     color: rgb(var(--white));
     background-color: rgb(var(--black));
@@ -1042,11 +937,11 @@
     display: flex;
   }
   .point {
-    border-radius: var(--menuItemR);
+    border-radius: var(--size-8);
     cursor: pointer;
-    gap: var(--innerGap);
+    gap: var(--size-4);
     width: 100%;
-    padding: var(--pointPad);
+    padding: var(--size-12);
     transition: background-color 0.15s;
   }
   .point:hover:not(.point--still) {
@@ -1067,17 +962,17 @@
   }
   @media (max-width: 560px) {
     .f {
-      gap: 16px;
+      gap: var(--size-16);
       display: flex;
     }
   }
   .cookies {
     align-items: center;
-    gap: var(--listGap);
+    gap: var(--size-12);
     background-color: rgb(var(--slavBase) / 95%);
     padding: var(--footPad);
-    box-shadow: 0 4px 12px rgb(var(--black) / 30%);
-    border-radius: 8px;
+    box-shadow: 0 var(--size-4) var(--size-12) rgb(var(--black) / 30%);
+    border-radius: var(--size-8);
     flex-direction: row;
     display: flex;
   }
@@ -1108,17 +1003,17 @@
   @media (max-width: 560px) {
     .banner {
       padding-bottom: var(--platePad);
-      gap: 24px;
+      gap: var(--size-24);
     }
   }
   body,
   html {
-    scroll-padding-top: 48px;
+    scroll-padding-top: var(--size-48);
   }
   @media (min-width: 768px) {
     body,
     html {
-      scroll-padding-top: 68px;
+      scroll-padding-top: var(--size-68);
     }
   }
 }

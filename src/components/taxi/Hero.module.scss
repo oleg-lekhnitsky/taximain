@@ -1,32 +1,32 @@
 .download {
   width: auto;
-  margin-top: 12px;
+  margin-top: var(--size-12);
   text-decoration: none;
 
   &:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 4px;
+    outline: var(--size-2) solid var(--color-white);
+    outline-offset: var(--size-4);
   }
 }
 
 .backdrop {
   position: absolute;
-  top: calc(-1 * var(--site-header-height, 80px));
+  top: calc(-1 * var(--site-header-height, var(--size-80)));
   bottom: 0;
   left: 50%;
-  width: min(100vw, 1920px);
+  width: min(100vw, var(--size-1920));
   transform: translateX(-50%);
   z-index: -1;
   overflow: hidden;
   pointer-events: none;
-  background: #ff00ff;
+  background: var(--color-pink);
   &::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgb(0 0 0 / 45%), rgb(0 0 0 / 12%) 32%, transparent 65%);
+    background: linear-gradient(to top, var(--color-0-0-0-45), var(--color-0-0-0-12) 32%, transparent 65%);
   }
 }
 @media (width > 1920px) {
-  .backdrop { border-radius: 40px; }
+  .backdrop { border-radius: var(--size-40); }
 }

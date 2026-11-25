@@ -1,7 +1,7 @@
 const labels: Record<string, string> = {
   copyright: "Копирайт и название компании", "Copyright and company": "Копирайт и название компании",
   "One text block. Use a new line to separate the copyright and company name.": "Один текстовый блок. Разделите копирайт и название компании переносом строки.",
-  rateText: "Текст плашки кешбэка", downloadsText: "Текст о скачиваниях",
+  rateText: "Текст плашки кешбэка", downloadsText: "Текст об установках",
   sharedSettings: "Общие настройки", header: "Навигация", footer: "Подвал сайта", cookie: "Уведомление о cookies", accessibility: "Доступность", links: "Ссылки",
   googlePlayUrl: "Ссылка Google Play", appStoreUrl: "Ссылка App Store", userAgreementUrl: "Ссылка на пользовательское соглашение", privacyPolicyUrl: "Ссылка на политику конфиденциальности", serviceRulesUrl: "Ссылка на правила сервиса",
   answerContent: "Ответ", text: "Текст раздела",
@@ -18,7 +18,7 @@ const labels: Record<string, string> = {
   carouselLabel: "Название карусели", carouselPositionLabel: "Положение в карусели", previousSlideLabel: "Предыдущий слайд", nextSlideLabel: "Следующий слайд",
   tariffsCardLabel: "Карточка тарифов", arrivalCardLabel: "Карточка подачи машины", servicesCardLabel: "Карточка возможностей",
   cities: "Города", rate: "Процент кешбэка", cashbackRate: "Процент кешбэка", ratePrefix: "Текст перед процентом", ratePrefixAfter: "Текст после процента",
-  terms: "Условия", downloadsLabel: "Текст о скачиваниях", downloadsValue: "Количество скачиваний", scanText: "Инструкция для QR-кода",
+  terms: "Условия", downloadsLabel: "Текст об установках", downloadsValue: "Количество скачиваний", scanText: "Инструкция для QR-кода",
   scanAppLabel: "Текст сканирования QR-кода", qrImageDescription: "Описание QR-кода", qrAlt: "Описание QR-кода",
   appStoreLabel: "Название ссылки App Store", googlePlayLabel: "Название ссылки Google Play", privacyPolicyLabel: "Политика конфиденциальности",
   userAgreementLabel: "Пользовательское соглашение", serviceRulesLabel: "Правила сервиса", legalHeading: "Юридическая информация",

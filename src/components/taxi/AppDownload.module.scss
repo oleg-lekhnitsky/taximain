@@ -1,5 +1,5 @@
 .section.section {
-  padding-top: 40px;
+  padding-top: var(--size-40);
   padding-inline: var(--page-gutter);
 }
 
@@ -9,10 +9,10 @@
   overflow: hidden;
   width: 100%;
   min-height: 430px;
-  padding: 24px;
-  border-radius: 56px;
-  background: #ff00ff;
-  color: #fff;
+  padding: var(--size-24);
+  border-radius: var(--size-56);
+  background: var(--color-pink);
+  color: var(--color-white);
 }
 
 .photo {
@@ -36,30 +36,30 @@
   min-height: 382px;
   flex-direction: column;
   justify-content: space-between;
-  gap: 48px;
+  gap: var(--size-48);
 }
 
 .cards,
 .footer {
   display: grid;
-  grid-template-columns: minmax(0, 356px) 241px;
-  gap: 8px;
+  grid-template-columns: minmax(0, var(--size-356)) var(--size-241);
+  gap: var(--size-8);
 }
 
 .titleCard {
   display: flex;
-  height: 241px;
+  height: var(--size-241);
   flex-direction: column;
   justify-content: space-between;
   gap: 0;
-  padding: 20px;
-  border-radius: 32px;
-  background: #f0f;
+  padding: var(--size-20);
+  border-radius: var(--size-32);
+  background: var(--color-pink);
 
   h2 {
     margin: 0;
     color: inherit;
-    font-size: calc(44px * var(--heading-size-scale, 1));
+    font-size: calc(var(--size-44) * var(--heading-size-scale, 1));
     line-height: 0.79;
     letter-spacing: -0.02em;
     text-align: left;
@@ -71,25 +71,25 @@
   aspect-ratio: 1;
   align-self: start;
   place-items: center;
-  border-radius: 32px;
-  background: #fff;
+  border-radius: var(--size-32);
+  background: var(--color-white);
 }
 
 .qr {
   position: relative;
-  width: 202px;
-  height: 202px;
+  width: var(--size-202);
+  height: var(--size-202);
 }
 
 .qrMark {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 44px;
-  height: 44px;
+  width: var(--size-44);
+  height: var(--size-44);
   transform: translate(-50%, -50%);
-  border-radius: 12px;
-  background: conic-gradient(#661aff 25%, #f0f 0 50%, #661aff 0 75%, #f0f 0);
+  border-radius: var(--size-12);
+  background: conic-gradient(var(--color-violet) 25%, var(--color-pink) 0 50%, var(--color-violet) 0 75%, var(--color-pink) 0);
 }
 
 .footer {
@@ -97,38 +97,56 @@
   padding: 0;
 }
 
+@media (min-width: 768px) {
+  .footer {
+    position: absolute;
+    right: var(--size-24);
+    bottom: var(--size-24);
+    left: var(--size-24);
+    grid-template-columns: minmax(0, var(--size-356)) minmax(0, var(--size-241)) minmax(max-content, 1fr);
+    align-items: center;
+  }
+
+  .hint {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .storePosition {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+    padding-right: var(--size-20);
+  }
+}
+
 .stores {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  gap: var(--size-8);
 
   img {
     transform: scaleY(-1);
   }
 
-  a {
+  span {
     display: block;
-    border-radius: 8px;
-    transition: transform 150ms ease;
-
-    &:active {
-      transform: scale(0.96);
-    }
-    &:focus-visible {
-      outline: 2px solid #fff;
-      outline-offset: 4px;
-    }
   }
 }
 
 .hint {
   font-family: "WB Sans", sans-serif;
   font-size: 21px;
-  font-weight: 500;
+  font-weight: var(--weight-500);
   line-height: 0.92;
   letter-spacing: -0.02em;
   text-align: center;
+
+  &:lang(hy) {
+    font-weight: var(--weight-700);
+    line-height: 1.2;
+  }
 }
 
 .downloadButton {
@@ -137,14 +155,14 @@
 
 @media (max-width: 767px) {
   .section.section {
-    padding-top: 24px;
+    padding-top: var(--size-24);
     padding-inline: 0;
   }
 
   .panel {
-    min-height: 650px;
+    min-height: var(--size-650);
     padding: var(--page-gutter);
-    border-radius: 32px;
+    border-radius: var(--size-32);
   }
 
   .photo {
@@ -153,7 +171,7 @@
     transform-origin: 72% bottom;
   }
   .content {
-    min-height: calc(650px - 2 * var(--page-gutter));
+    min-height: calc(var(--size-650) - 2 * var(--page-gutter));
     justify-content: flex-end;
   }
   .cards,
@@ -165,33 +183,33 @@
     max-width: none;
     height: auto;
     justify-content: flex-start;
-    gap: 24px;
+    gap: var(--size-24);
   }
   .downloadButton {
     display: flex;
     text-transform: lowercase;
-    min-height: 48px;
+    min-height: var(--size-48);
     align-items: center;
     justify-content: center;
     padding: var(--mobile-pill-padding);
-    border-radius: 999px;
-    background: #f6fe00;
-    color: #000;
+    border-radius: var(--size-999);
+    background: var(--color-yellow);
+    color: var(--color-black);
     font-family: "WB Sans", sans-serif;
-    font-size: var(--mobile-pill-font-size);
-    font-weight: 500;
+    font-size: var(--size-32);
+    font-weight: var(--weight-500);
     line-height: var(--mobile-pill-line-height);
     letter-spacing: var(--mobile-pill-letter-spacing);
     text-box-trim: trim-both;
     text-box-edge: cap alphabetic;
-    transition: transform 150ms ease-out;
+    transition: transform var(--duration-150) ease-out;
 
     &:active {
       transform: scale(0.96);
     }
   }
   .titleCard h2 {
-    font-size: calc(clamp(34px, 7.5vw, 44px) * var(--heading-size-scale, 1));
+    font-size: calc(clamp(34px, 7.5vw, var(--size-44)) * var(--heading-size-scale, 1));
     text-align: center;
   }
   .qrCard,
@@ -200,7 +218,7 @@
   .desktopLogo {
     display: none;
   }
-  .stores a[data-platform-hidden="true"] {
+  .stores span[data-platform-hidden="true"] {
     display: none;
   }
   .footer {
@@ -208,8 +226,22 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .stores a {
-    transition: none;
+.downloads {
+  display: flex;
+  flex-shrink: 0;
+  justify-self: start;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  gap: var(--size-11);
+  padding: var(--size-20);
+  border-radius: var(--size-24);
+
+  p {
+    font-family: "WB Sans", sans-serif;
+    font-size: 26px;
+    font-weight: var(--weight-700);
+    line-height: 0.84;
+    letter-spacing: -0.02em;
   }
 }

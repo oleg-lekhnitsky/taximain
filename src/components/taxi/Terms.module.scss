@@ -3,8 +3,8 @@
 }
 
 .track {
-  column-gap: var(--carousel-grid-gap);
-  padding-block: 10px;
+  column-gap: var(--size-12);
+  padding-block: var(--size-10);
 }
 
 .imageCard:global(.term-card) {
@@ -12,15 +12,15 @@
   width: var(--carousel-card-width);
   height: auto;
   padding: var(--page-gutter);
-  padding-bottom: calc(var(--page-gutter) + 8px);
-  background: #ffe1ff;
+  padding-bottom: calc(var(--page-gutter) + var(--size-8));
+  background: var(--color-surface-pink);
   overflow: visible;
   display: block;
 }
 
 .artwork {
   position: relative;
-  background: #ff00ff;
+  background: var(--color-pink);
   width: 100%;
   aspect-ratio: 890 / 998;
   border-radius: inherit;
@@ -29,10 +29,10 @@
 }
 
 .imageCard .caption {
-  margin: 24px 0 0;
+  margin: var(--size-24) 0 0;
   font-family: "WB Sans", sans-serif;
-  font-size: 24px;
-  font-weight: 500;
+  font-size: var(--size-24);
+  font-weight: var(--weight-500);
   line-height: 1.15;
   letter-spacing: -0.02em;
   text-align: center;

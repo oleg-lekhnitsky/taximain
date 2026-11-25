@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
-    column-gap: var(--card-gap);
+    column-gap: var(--size-12);
 
     > h2 {
       min-width: 0;

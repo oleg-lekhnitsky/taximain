@@ -23,7 +23,7 @@ const ru = {
   upToAfter: false,
   cashbackTerms:
     "Кешбэком можно покрыть до 99% стоимости следующих поездок с оплатой картой.",
-  downloads: ["1,5+ млн", "скачиваний"],
+  downloads: ["1,5+ млн", "установок"],
   download: ["закажите такси", "в приложении"],
   downloadButton: "Скачать",
   scan: ["наведите камеру,", "чтобы скачать"],
@@ -106,7 +106,7 @@ const am: SiteCopy = {
   upToAfter: false,
   cashbackTerms:
     "Քեշբեքով կարող եք վճարել քարտով վճարվող հաջորդ ուղևորությունների արժեքի մինչև 99%-ը։",
-  downloads: ["1,5+ մլն", "ներբեռնում"],
+  downloads: ["1,5+ մլն", "տեղադրում"],
   download: ["պատվիրեք տաքսի", "հավելվածում"],
   downloadButton: "Ներբեռնել",
   scan: ["ուղղեք տեսախցիկը՝", "ներբեռնելու համար"],
@@ -192,7 +192,7 @@ const ge: SiteCopy = {
   upToAfter: true,
   cashbackTerms:
     "ქეშბექით შეგიძლიათ დაფაროთ ბარათით გადახდილი მომდევნო მგზავრობების ღირებულების 99%-მდე.",
-  downloads: ["1,5+ მლნ", "ჩამოტვირთვა"],
+  downloads: ["1,5+ მლნ", "ინსტალაცია"],
   download: ["შეუკვეთეთ ტაქსი", "აპლიკაციაში"],
   downloadButton: "ჩამოტვირთვა",
   scan: ["მიმართეთ კამერა", "ჩამოსატვირთად"],
@@ -279,7 +279,7 @@ const uz: SiteCopy = {
   upToAfter: true,
   cashbackTerms:
     "Keshbek bilan karta orqali to‘lanadigan keyingi safarlar narxining 99% gacha qismini qoplashingiz mumkin.",
-  downloads: ["1,5+ mln", "yuklab olish"],
+  downloads: ["1,5+ mln", "o‘rnatish"],
   download: ["taksi chaqiring", "ilovada"],
   downloadButton: "Yuklab olish",
   scan: ["kamerani yo‘naltiring,", "yuklab olish uchun"],
@@ -362,7 +362,7 @@ const ky: SiteCopy = {
   upToAfter: true,
   cashbackTerms:
     "Кешбэк менен карта аркылуу төлөнүүчү кийинки сапарлардын наркынын 99%ына чейин жаба аласыз.",
-  downloads: ["1,5+ млн", "жүктөп алуу"],
+  downloads: ["1,5+ млн", "орнотуу"],
   download: ["такси чакырыңыз", "колдонмодо"],
   downloadButton: "Жүктөп алуу",
   scan: ["камераны багыттаңыз,", "жүктөп алуу үчүн"],
@@ -444,7 +444,7 @@ const be: SiteCopy = {
   upToAfter: false,
   cashbackTerms:
     "Кешбэкам можна пакрыць да 99% кошту наступных паездак з аплатай картай.",
-  downloads: ["1,5+ млн", "спампоўванняў"],
+  downloads: ["1,5+ млн", "усталяванняў"],
   download: ["замоўце таксі", "ў дадатку"],
   downloadButton: "Спампаваць",
   scan: ["навядзіце камеру,", "каб спампаваць"],

@@ -43,89 +43,89 @@ body.wb-taxi-admin:has(input[type="password"]):not(:has(nav)) {
 .wb-taxi-admin:has(input[type="password"]):not(:has(nav))
   main
   > div:first-child {
-  border-radius: 24px;
+  border-radius: var(--size-24);
 }
 
 .wb-taxi-admin:has(input[type="password"]):not(:has(nav))
   button[type="submit"] {
-  min-height: 44px;
-  border-radius: 999px;
+  min-height: var(--size-44);
+  border-radius: var(--size-999);
 }
 
 /* Page-section titles stand apart from their individual field labels. */
 .wb-taxi-admin label[data-wb-section-title] {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: var(--size-24);
+  font-weight: var(--weight-700);
   line-height: 1.25;
   letter-spacing: -0.025em;
-  padding-block: 8px;
+  padding-block: var(--size-8);
 }
 
 .wb-preview-help,
 .wb-preview-error {
-  font-size: 14px;
+  font-size: var(--size-14);
   line-height: 1.5;
-  margin-bottom: 12px;
+  margin-bottom: var(--size-12);
 }
 .wb-preview-error {
-  color: #d02b52;
-  margin-top: 12px;
+  color: var(--color-d02b52);
+  margin-top: var(--size-12);
 }
 .wb-preview-panel {
   position: fixed;
   z-index: 90;
-  inset: auto 16px 16px auto;
-  width: min(560px, calc(100vw - 32px));
-  height: min(340px, calc(100dvh - 32px));
-  border-radius: 16px;
+  inset: auto var(--size-16) var(--size-16) auto;
+  width: min(560px, calc(100vw - var(--size-32)));
+  height: min(var(--size-340), calc(100dvh - var(--size-32)));
+  border-radius: var(--size-16);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background: #f6f6f9;
-  color: #281d30;
-  border: 1px solid #e7d5ee;
-  box-shadow: -8px 0 40px #17061f14;
+  background: var(--color-surface);
+  color: var(--color-281d30);
+  border: var(--size-1) solid var(--color-e7d5ee);
+  box-shadow: calc(-1 * var(--size-8)) 0 var(--size-40) var(--color-17061f14);
 }
 .wb-preview-toolbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 8px;
-  padding: 10px;
+  gap: var(--size-8);
+  padding: var(--size-10);
   background: white;
 }
 .wb-preview-toolbar strong {
-  font-size: 14px;
+  font-size: var(--size-14);
 }
 .wb-preview-controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: var(--size-6);
 }
 .wb-preview-controls button {
-  border: 1px solid #e7d5ee;
-  border-radius: 8px;
-  padding: 6px 8px;
+  border: var(--size-1) solid var(--color-e7d5ee);
+  border-radius: var(--size-8);
+  padding: var(--size-6) var(--size-8);
   background: white;
-  color: #44104f;
+  color: var(--color-44104f);
   cursor: pointer;
   font:
-    500 12px/1.3 "WB Sans",
+    500 var(--size-12)/1.3 "WB Sans",
     sans-serif;
 }
 .wb-preview-controls button[aria-pressed="true"] {
-  background: #fff0ff;
-  border-color: #b000c8;
+  background: var(--color-fff0ff);
+  border-color: var(--color-b000c8);
 }
 .wb-preview-controls button:focus-visible {
-  outline: 2px solid #b000c8;
-  outline-offset: 2px;
+  outline: var(--size-2) solid var(--color-b000c8);
+  outline-offset: var(--size-2);
 }
 .wb-preview-caption {
-  padding: 6px 10px;
-  font-size: 11px;
-  background: #fff0ff;
+  padding: var(--size-6) var(--size-10);
+  font-size: var(--size-11);
+  background: var(--color-fff0ff);
 }
 .wb-preview-viewport {
   position: relative;
@@ -141,42 +141,42 @@ body.wb-taxi-admin:has(input[type="password"]):not(:has(nav)) {
   margin-inline: auto;
 }
 .wb-preview-panel.is-expanded {
-  width: min(1000px, calc(100vw - 32px));
-  height: min(760px, calc(100dvh - 32px));
+  width: min(var(--size-1000), calc(100vw - var(--size-32)));
+  height: min(760px, calc(100dvh - var(--size-32)));
 }
 
 /* Field-purpose badges distinguish visible copy from accessibility settings. */
 .wb-taxi-admin [data-wb-field-badge] {
   display: inline-block;
   vertical-align: middle;
-  margin-left: 8px;
-  padding: 3px 8px;
-  border: 1px solid currentColor;
-  border-radius: 999px;
+  margin-left: var(--size-8);
+  padding: var(--size-3) var(--size-8);
+  border: var(--size-1) solid currentColor;
+  border-radius: var(--size-999);
   font:
-    500 11px/1.3 "WB Sans",
+    500 var(--size-11)/1.3 "WB Sans",
     sans-serif;
   letter-spacing: 0;
   white-space: nowrap;
 }
 .wb-taxi-admin label[data-wb-field-kind="screen-reader"] [data-wb-field-badge] {
-  color: #7134a0;
-  background: #f5edff;
+  color: var(--color-7134a0);
+  background: var(--color-f5edff);
 }
 .wb-taxi-admin .wb-field-purpose {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: var(--size-1);
+  height: var(--size-1);
   padding: 0;
-  margin: -1px;
+  margin: calc(-1 * var(--size-1));
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;
   border: 0;
 }
 .wb-taxi-admin textarea[data-wb-screen-reader] {
-  height: 44px;
-  min-height: 44px;
+  height: var(--size-44);
+  min-height: var(--size-44);
   line-height: 1.4;
   resize: vertical;
 }
@@ -184,13 +184,13 @@ body.wb-taxi-admin:has(input[type="password"]):not(:has(nav)) {
 /* Give selected images enough room to judge their composition. */
 .wb-taxi-admin [data-wb-asset-row] {
   flex-wrap: wrap;
-  gap: 16px;
-  padding: 16px;
+  gap: var(--size-16);
+  padding: var(--size-16);
 }
 .wb-taxi-admin [data-wb-asset-preview] {
   width: 100%;
   height: 220px;
-  border-radius: 8px;
+  border-radius: var(--size-8);
 }
 .wb-taxi-admin [data-wb-asset-preview] img {
   object-fit: contain;
@@ -198,7 +198,7 @@ body.wb-taxi-admin:has(input[type="password"]):not(:has(nav)) {
 .wb-taxi-admin [data-wb-asset-row] > :nth-child(2) {
   white-space: normal;
   overflow-wrap: anywhere;
-  min-width: 100px;
+  min-width: var(--size-100);
 }
 
 /* Explicit contrast avoids blending the logo into light auth panels. */
@@ -221,41 +221,41 @@ body.wb-taxi-admin:has(input[type="password"]):not(:has(nav)) {
 
 /* Match the site's card and form radii on the authentication screens. */
 .wb-taxi-admin [data-wb-auth-card] {
-  border-radius: 56px;
+  border-radius: var(--size-56);
   overflow: hidden;
 }
 .wb-taxi-admin[data-wb-auth] form input:not([type="checkbox"]),
 .wb-taxi-admin[data-wb-auth] form div:has(> input:not([type="checkbox"])) {
-  border-radius: 16px;
+  border-radius: var(--size-16);
 }
 .wb-taxi-admin[data-wb-auth] button[role="combobox"] {
-  border-radius: 16px;
+  border-radius: var(--size-16);
 }
 
 @media (max-width: 767px) {
   .wb-taxi-admin [data-wb-auth-card] {
-    border-radius: 32px;
+    border-radius: var(--size-32);
   }
 }
 
 .wb-taxi-admin .wb-link-preset {
   align-self: flex-start;
-  margin-top: 8px;
-  padding: 8px 12px;
-  border: 1px solid #a880ff;
-  border-radius: 999px;
+  margin-top: var(--size-8);
+  padding: var(--size-8) var(--size-12);
+  border: var(--size-1) solid var(--color-violet-light);
+  border-radius: var(--size-999);
   background: transparent;
   color: inherit;
   font: inherit;
-  font-size: 13px;
+  font-size: var(--size-13);
   cursor: pointer;
 }
 .wb-taxi-admin .wb-link-preset:hover {
-  background: #661aff20;
+  background: var(--color-661aff20);
 }
 .wb-taxi-admin .wb-link-preset:focus-visible {
-  outline: 2px solid #a880ff;
-  outline-offset: 3px;
+  outline: var(--size-2) solid var(--color-violet-light);
+  outline-offset: var(--size-3);
 }
 
 /* Keep entered values when switching type; show only applicable controls. */
@@ -266,28 +266,28 @@ body.wb-taxi-admin:has(input[type="password"]):not(:has(nav)) {
   display: none;
 }
 .wb-preview-sections {
-  margin: 6px 10px;
-  padding: 6px 10px;
-  border: 1px solid #a880ff;
-  border-radius: 8px;
-  background: #fff;
-  color: #24153d;
+  margin: var(--size-6) var(--size-10);
+  padding: var(--size-6) var(--size-10);
+  border: var(--size-1) solid var(--color-violet-light);
+  border-radius: var(--size-8);
+  background: var(--color-white);
+  color: var(--color-24153d);
   font: inherit;
-  font-size: 12px;
+  font-size: var(--size-12);
 }
-.wb-content-checks { font-size: 12px; line-height: 1.5; }
-.wb-content-checks p { margin-bottom: 12px; }
-.wb-content-checks ul { padding-left: 18px; margin-bottom: 12px; list-style: disc; }
-.wb-content-checks li + li { margin-top: 8px; }
+.wb-content-checks { font-size: var(--size-12); line-height: 1.5; }
+.wb-content-checks p { margin-bottom: var(--size-12); }
+.wb-content-checks ul { padding-left: var(--size-18); margin-bottom: var(--size-12); list-style: disc; }
+.wb-content-checks li + li { margin-top: var(--size-8); }
 .wb-taxi-admin .wb-preview-block {
-  margin-left: 12px;
-  padding: 5px 10px;
-  border: 1px solid #a880ff;
-  border-radius: 999px;
+  margin-left: var(--size-12);
+  padding: var(--size-5) var(--size-10);
+  border: var(--size-1) solid var(--color-violet-light);
+  border-radius: var(--size-999);
   color: inherit;
   background: transparent;
   font: inherit;
-  font-size: 11px;
+  font-size: var(--size-11);
   cursor: pointer;
 }
-.wb-taxi-admin .wb-preview-block:focus-visible { outline: 2px solid #a880ff; outline-offset: 3px; }
+.wb-taxi-admin .wb-preview-block:focus-visible { outline: var(--size-2) solid var(--color-violet-light); outline-offset: var(--size-3); }

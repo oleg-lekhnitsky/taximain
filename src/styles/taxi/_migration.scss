@@ -1,6 +1,5 @@
 :root {
-  --site-max-width: 1440px;
-  --site-header-height: 68px;
+  --site-header-height: var(--size-68);
 }
 
 @media (min-width: 768px) {
@@ -11,19 +10,19 @@
 
 @media (min-width: 1024px) {
   :root {
-    --site-header-height: 64px;
+    --site-header-height: var(--size-64);
   }
 }
 
 body {
-  // Clip full-bleed sections at the page edge without creating a scroll container.
-  // The carousel keeps its own horizontal scrolling, and sticky headers still work.
+  /* Clip full-bleed sections at the page edge without creating a scroll container. */
+  /* The carousel keeps its own horizontal scrolling, and sticky headers still work. */
   overflow-x: clip;
 }
 
 #root {
   width: 100%;
-  max-width: var(--site-max-width);
+  max-width: var(--size-1440);
   margin-inline: auto;
 }
 
@@ -52,31 +51,31 @@ body {
   }
 
   .delivery-carousel {
-    width: calc((100vw + var(--site-max-width)) / 2);
+    width: calc((100vw + var(--size-1440)) / 2);
     margin-inline: 0;
   }
 
   .carousel-section .carousel-controls {
-    width: calc((100vw + var(--site-max-width)) / 2 - 2 * var(--page-gutter));
+    width: calc((100vw + var(--size-1440)) / 2 - 2 * var(--page-gutter));
     margin-inline: var(--page-gutter);
   }
 }
 
 #sect-hero {
-  --hero-max-width: 1920px;
+  --hero-max-width: var(--size-1920);
   --hero-background-image: none;
 
   position: relative;
   height: auto;
   max-height: none;
-  min-height: calc(100svh - var(--site-header-height, 80px));
+  min-height: calc(100svh - var(--site-header-height, var(--size-80)));
   overflow: visible;
   background: transparent;
 }
 
 #sect-hero > .hero-shell {
   min-height: inherit;
-  padding-block: 48px;
+  padding-block: var(--size-48);
   padding-inline: var(--page-gutter);
 }
 
@@ -97,7 +96,7 @@ body {
 }
 
 #sect-hero #hero-title {
-  color: #fff;
+  color: var(--color-white);
   line-height: 0.85;
   text-align: left;
   text-wrap: balance;
@@ -123,8 +122,8 @@ body {
   #sect-hero[data-intro="ready"]
     #hero-title[data-lines-ready]
     [data-heading-word] {
-    animation: hero-heading-rise 700ms cubic-bezier(0.22, 1, 0.36, 1)
-      var(--line-delay, 0ms) both;
+    animation: hero-heading-rise var(--duration-700) cubic-bezier(0.22, 1, 0.36, 1)
+      var(--line-delay, var(--duration-0)) both;
   }
 }
 
@@ -134,7 +133,7 @@ body {
   }
 }
 
-// Browser wrapping is the source of truth; measured rows control reveal timing.
+/* Browser wrapping is the source of truth; measured rows control reveal timing. */
 .flow-heading {
   text-wrap: balance;
   [data-heading-word] {
@@ -146,10 +145,10 @@ body {
   .flow-heading.heading-reveal-ready:not([data-lines-ready])
     [data-heading-word] {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(var(--size-24));
   }
   .flow-heading.heading-revealed[data-lines-ready] [data-heading-word] {
-    animation: hero-text-rise 700ms var(--ease) var(--line-delay, 0ms) both;
+    animation: hero-text-rise var(--duration-700) var(--ease) var(--line-delay, var(--duration-0)) both;
   }
 }
 
@@ -175,7 +174,7 @@ header:is([lang="hy"], [lang="ka"]) a,
 }
 
 #foot:is([lang="hy"], [lang="ka"]) nav a {
-  font-weight: 700;
+  font-weight: var(--weight-700);
 }
 
 #body:is([lang="hy"], [lang="ka"]) :is(h1, h2, h3, h4, p) {
@@ -183,11 +182,10 @@ header:is([lang="hy"], [lang="ka"]) a,
 }
 @media (max-width: 767px) {
   :root {
-    --mobile-heading-size: clamp(36px, calc(11.429vw - 0.571px), 44px);
+    --mobile-heading-size: clamp(var(--size-36), calc(11.429vw - var(--size-0_571)), var(--size-44));
     --heading-font-size: var(--mobile-heading-size);
     --h2-font-size: var(--mobile-heading-size);
-    --mobile-pill-font-size: 32px;
-    --mobile-pill-padding: 20px 24px;
+    --mobile-pill-padding: var(--size-20) var(--size-24);
     --mobile-pill-line-height: 1;
     --mobile-pill-letter-spacing: -0.03em;
   }
