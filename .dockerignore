@@ -1,7 +1,14 @@
 .git
 .next
 node_modules
-cms
+# The website shares these tokens with the CMS admin.
+cms/*
+!cms/src
+cms/src/*
+!cms/src/admin
+cms/src/admin/*
+!cms/src/admin/design-tokens.json
+!cms/src/admin/design-tokens.css
 .deployment
 .env*
 !.env.example
