@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import { useSiteContent } from "@/components/CountrySwitcher/ContentProvider";
 import { contentLanguage } from "@/lib/languages";
 import { isPlaceholderUrl } from "@/lib/countries";
 
@@ -11,6 +13,15 @@ import Logo from "@/components/Logo/Logo";
 import styles from "./Header.module.scss";
 import CountrySwitcher from "@/components/CountrySwitcher/CountrySwitcher";
 import { useCountry } from "@/components/CountrySwitcher/CountryProvider";
+
+const downloadAppLabels: Record<string, string> = {
+  "ru": "скачать приложение",
+  "hy": "ներբեռնել հավելվածը",
+  "ka": "აპის ჩამოტვირთვა",
+  "uz": "ilovani yuklab olish",
+  "ky": "тиркемени жүктөп алуу",
+  "be": "спампаваць праграму"
+};
 
 function HeaderLogo({
   white,
@@ -50,6 +61,8 @@ export default function Header({
   homeHref?: string;
 }) {
   const copy = useCopy();
+  const { footerCopyright } = useSiteContent();
+  const [appleDevice, setAppleDevice] = useState(false);
   const { pageCountry, pageLanguage } = useCountry();
   const partnersUrl = new URL(pageCountry.partnersUrl);
   partnersUrl.searchParams.set("country", pageCountry.code);
@@ -162,7 +175,16 @@ export default function Header({
                   {copy.partners}
                 </a>{" "}
               </nav>
+              <div className={styles.selectorActions}>
               <CountrySwitcher />
+              <TransitionLink
+                href={`${home}#download`}
+                className={styles.downloadButton}
+                data-download-cta
+              >
+                {copy.downloadButton}
+              </TransitionLink>
+              </div>
             </div>{" "}
           </div>{" "}
         </div>{" "}
@@ -188,7 +210,10 @@ export default function Header({
                 <CountrySwitcher />
                 <button
                   ref={menuButton}
-                  onClick={() => setOpen(!open)}
+                  onClick={() => {
+                    setAppleDevice(/iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent));
+                    setOpen(!open);
+                  }}
                   type="button"
                   className={styles.menuButton}
                   aria-label={open ? copy.closeMenu : copy.openMenu}
@@ -231,21 +256,35 @@ export default function Header({
             aria-hidden={!open}
             inert={!open}
           >
-            <TransitionLink
-              href={`${home}#sect-faqs`}
-              onClick={() => setOpen(false)}
-            >
-              {copy.faqNav}
-            </TransitionLink>
-            <a
-              href={partnersHref}
-              aria-disabled={!partnersHref || undefined}
-              onClick={() => {
-                if (partnersHref) setOpen(false);
-              }}
-            >
-              {copy.partners}
-            </a>
+            <div className={styles.mobileMenuActions}>
+              <div className={styles.mobileMenuLinks}>
+                <a href={partnersHref} aria-disabled={!partnersHref || undefined}
+                  onClick={() => { if (partnersHref) setOpen(false); }}>
+                  {copy.partners}
+                </a>
+                <TransitionLink href={`${home}#sect-faqs`} onClick={() => setOpen(false)}>
+                  {copy.faqNav}
+                </TransitionLink>
+                <TransitionLink href={`/tariffs?country=${pageCountry.code}&lang=${pageLanguage}`} onClick={() => setOpen(false)}>
+                  {copy.footer[0]}
+                </TransitionLink>
+              </div>
+              <TransitionLink
+                href={`/download?country=${pageCountry.code}&lang=${pageLanguage}`}
+                className={`${styles.downloadButton} ${styles.mobileMenuDownload}`}
+                data-download-cta
+                onClick={() => setOpen(false)}
+              >
+                <span className={appleDevice ? styles.appleIcon : styles.playIcon}>
+                  <Image src={`/assets/download/${appleDevice ? "apple" : "play"}-icon.svg`}
+                    alt="" width={appleDevice ? 16.1169 : 19.2964} height={appleDevice ? 18 : 23.5034} />
+                </span>
+                {downloadAppLabels[pageLanguage] ?? copy.downloadButton}
+              </TransitionLink>
+            </div>
+            <p className={styles.menuCopyright}>
+              {footerCopyright ?? "© 2026\nООО «Оператор ВБ Такси»"}
+            </p>
           </nav>
         </div>{" "}
       </header>

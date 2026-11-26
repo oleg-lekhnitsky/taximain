@@ -9,6 +9,12 @@
   }
 }
 
+@media (max-width: 767px) {
+  .download.download {
+    padding: var(--size-12) var(--size-20);
+  }
+}
+
 .backdrop {
   position: absolute;
   top: calc(-1 * var(--site-header-height, var(--size-80)));

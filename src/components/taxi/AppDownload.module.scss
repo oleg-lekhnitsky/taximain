@@ -1,3 +1,5 @@
+@use "../../styles/taxi/download-button";
+
 .section.section {
   padding-top: var(--size-40);
   padding-inline: var(--page-gutter);
@@ -186,27 +188,9 @@
     gap: var(--size-24);
   }
   .downloadButton {
-    display: flex;
-    text-transform: lowercase;
-    min-height: var(--size-48);
-    align-items: center;
-    justify-content: center;
-    padding: var(--mobile-pill-padding);
-    border-radius: var(--size-999);
+    @include download-button.mobile;
     background: var(--color-yellow);
     color: var(--color-black);
-    font-family: "WB Sans", sans-serif;
-    font-size: var(--size-32);
-    font-weight: var(--weight-500);
-    line-height: var(--mobile-pill-line-height);
-    letter-spacing: var(--mobile-pill-letter-spacing);
-    text-box-trim: trim-both;
-    text-box-edge: cap alphabetic;
-    transition: transform var(--duration-150) ease-out;
-
-    &:active {
-      transform: scale(0.96);
-    }
   }
   .titleCard h2 {
     font-size: calc(clamp(34px, 7.5vw, var(--size-44)) * var(--heading-size-scale, 1));

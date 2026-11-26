@@ -125,11 +125,16 @@ export default function MelonModel({ className, foreground = false }: { classNam
                     mix(mix(coinHash(i + vec3(0,0,1)), coinHash(i + vec3(1,0,1)), f.x),
                     mix(coinHash(i + vec3(0,1,1)), coinHash(i + vec3(1,1,1)), f.x), f.y), f.z);
                 }
+              `).replace("#include <color_fragment>", `
+                #include <color_fragment>
+                // Fine surface variation stays attached to the model as it rotates.
+                float coinSurfaceGrain = coinNoise(vCoinSurface * 95.0);
+                diffuseColor.rgb *= mix(0.94, 1.0, coinSurfaceGrain);
               `).replace("#include <roughnessmap_fragment>", `
                 #include <roughnessmap_fragment>
                 float coinGrain = coinNoise(vCoinSurface * 95.0);
                 float coinWear = coinNoise(vCoinSurface * 9.0);
-                roughnessFactor = clamp(roughnessFactor + (coinGrain - 0.5) * 0.11 + (coinWear - 0.5) * 0.06, 0.3, 0.7);
+                roughnessFactor = clamp(roughnessFactor + (coinGrain - 0.5) * 0.18 + (coinWear - 0.5) * 0.06, 0.3, 0.7);
               `).replace("#include <normal_fragment_maps>", `
                 #include <normal_fragment_maps>
                 vec3 coinDx = normalize(dFdx(-vViewPosition));
@@ -137,11 +142,11 @@ export default function MelonModel({ className, foreground = false }: { classNam
                 vec3 coinR1 = cross(coinDy, normal);
                 vec3 coinR2 = cross(normal, coinDx);
                 float coinDet = dot(coinDx, coinR1) * faceDirection;
-                vec2 coinSlope = vec2(dFdx(coinGrain), dFdy(coinGrain)) * 0.03;
+                vec2 coinSlope = vec2(dFdx(coinGrain), dFdy(coinGrain)) * 0.05;
                 normal = normalize(abs(coinDet) * normal - sign(coinDet) * (coinSlope.x * coinR1 + coinSlope.y * coinR2));
               `);
             };
-            material.customProgramCacheKey = () => "coin-fine-grain-v2";
+            material.customProgramCacheKey = () => "coin-fine-grain-v3";
             material.needsUpdate = true;
           }
         });

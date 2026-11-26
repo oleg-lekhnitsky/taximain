@@ -95,9 +95,6 @@
 }
 .page .cards :global(.faq-card .faq-toggle) {
   width: 100%;
-  font-size: calc(var(--size-32) * var(--heading-size-scale, 1));
-  line-height: 1.2;
-  letter-spacing: normal;
   text-align: left;
 }
 .page .cards :global(.faq-question) {
@@ -109,9 +106,9 @@
   flex-direction: column;
   gap: var(--size-20);
   font:
-    400 var(--size-17)/1.647059 "Google Sans",
+    var(--weight-400) var(--size-16)/1.2 "Google Sans",
     sans-serif;
-  letter-spacing: -0.01em;
+  letter-spacing: normal;
   p {
     margin: 0;
     font: inherit;
@@ -206,9 +203,6 @@
   }
   .city h2,
   .empty h2 {
-    font-size: calc(var(--size-28) * var(--heading-size-scale, 1));
-  }
-  .page .cards :global(.faq-card .faq-toggle) {
     font-size: calc(var(--size-28) * var(--heading-size-scale, 1));
   }
   .cards > :global(.faq-card) {

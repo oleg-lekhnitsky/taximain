@@ -1,0 +1,26 @@
+@mixin mobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--size-48);
+  padding: var(--size-12) var(--size-20);
+  border-radius: var(--size-999);
+  text-transform: lowercase;
+  font-family: "WB Sans", sans-serif;
+  font-size: var(--size-32);
+  font-weight: var(--weight-500);
+  line-height: var(--mobile-pill-line-height);
+  letter-spacing: var(--mobile-pill-letter-spacing);
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+  transition: transform var(--duration-150) ease-out;
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    &:active { transform: none; }
+  }
+}

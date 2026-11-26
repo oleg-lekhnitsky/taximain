@@ -64,7 +64,9 @@
   width: 100%;
   height: 100%;
   pointer-events: auto;
-  filter: drop-shadow(0 var(--size-20) var(--size-28) var(--color-35-0-80-20));
+  filter:
+    drop-shadow(0 0 var(--size-12) var(--color-melon-glow))
+    drop-shadow(0 var(--size-20) var(--size-28) var(--color-35-0-80-20));
 }
 
 .foregroundMelon {
@@ -255,7 +257,7 @@
   }
 
   .rate {
-    padding: var(--mobile-pill-padding);
+    padding: var(--size-12) var(--size-20);
     font-size: var(--size-32);
     line-height: var(--mobile-pill-line-height);
     letter-spacing: var(--mobile-pill-letter-spacing);

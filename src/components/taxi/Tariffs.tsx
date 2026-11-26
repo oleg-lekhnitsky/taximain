@@ -121,6 +121,7 @@ export default function Tariffs({
                       entry.title ? (
                         <FaqItem
                           key={index}
+                          defaultExpanded={index === section.entries.findIndex((item) => Boolean(item.title))}
                           question={
                             <span lang={document.language}>
                               {cleanTariffTitle(entry.title)}
@@ -148,12 +149,14 @@ export default function Tariffs({
           </div>
         </>
       ) : (
-        <div className={styles.empty}>
-          <h2>{copy.emptyTitle}</h2>
-          <p>{copy.emptyBody}</p>
-          <TransitionLink href={downloadHref}>
-            {copy.download} <span aria-hidden="true">↗</span>
-          </TransitionLink>
+        <div className={styles.layout}>
+          <div className={`${styles.empty} ${styles.sections}`}>
+            <h2>{copy.emptyTitle}</h2>
+            <p>{copy.emptyBody}</p>
+            <TransitionLink href={downloadHref}>
+              {copy.download} <span aria-hidden="true">↗</span>
+            </TransitionLink>
+          </div>
         </div>
       )}
     </section>

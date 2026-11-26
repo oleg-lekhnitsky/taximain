@@ -160,5 +160,7 @@
   "size-2_667": "2.667px",
   "size-236": "236px",
   "duration-490": "490ms",
-  "duration-460": "460ms"
+  "duration-460": "460ms",
+  "color-melon-glow": "rgb(74 255 37 / 18%)",
+  "size-63": "63px"
 }
